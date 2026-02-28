@@ -4949,7 +4949,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Gameplay.Units.Enemy
   maxHp: 10
-  holyLightTag: HolyLight
   hitDisableCooldown: 0.05
   hitReact: {fileID: 883735973750297530}
   hitStopTime: 0.04
@@ -4965,9 +4964,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a20474210039b8a409d71380e4fbd158, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Gameplay.Units.Movement.DelayedInertiaSeekMovement
-  holyTag: HolyLight
   playerTag: Player
-  chasePlayerWhenDamaged: 1
   startDelayMin: 3
   startDelayMax: 5
   maxSpeed: 1
@@ -5171,9 +5168,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b69ff980b1a88de4e988869e9dfbada5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PolygonGenerator
-  vertexCount: 5
+  vertexCount: 15
   size: 2
-  jitterRange: {x: 0, y: 0}
+  jitterRange: {x: 0, y: 10}
   breatheAmp: 0.08
   breatheSpeed: 1.5
   wobbleAmp: 0.06

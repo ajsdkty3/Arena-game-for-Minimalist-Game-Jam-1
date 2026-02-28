@@ -1939,6 +1939,76 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 424738108}
   m_CullTransparentMesh: 1
+--- !u!1 &434435138
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 434435139}
+  - component: {fileID: 434435140}
+  m_Layer: 0
+  m_Name: Wave Spawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &434435139
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 434435138}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 565390686}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &434435140
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 434435138}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9947466981f3c764c929b731f402afc0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Gameplay.Units.EnemySpawner
+  arena: {fileID: 644953612}
+  target: {fileID: 793331815}
+  pool: {fileID: 1644947991}
+  runtimeParent: {fileID: 1625290431}
+  types:
+  - name: Enemy_1
+    poolKey: Enemy_1
+    startAfter: 10
+    interval: 10
+    burst: 5
+    burstGrowEvery: 30
+    burstGrowBy: 0
+    burstMax: 8
+    weight: 1
+  - name: Enemy_2
+    poolKey: Enemy_2
+    startAfter: 10
+    interval: 10
+    burst: 3
+    burstGrowEvery: 30
+    burstGrowBy: 0
+    burstMax: 5
+    weight: 1
+  maxAliveTotal: 60
+  minOffset: 1
+  maxOffset: 3
 --- !u!1 &486760178
 GameObject:
   m_ObjectHideFlags: 0
@@ -2228,6 +2298,7 @@ Transform:
   - {fileID: 1644947992}
   - {fileID: 644953611}
   - {fileID: 1526851934}
+  - {fileID: 434435139}
   - {fileID: 1625290431}
   - {fileID: 1371052387}
   - {fileID: 1511672065}
@@ -6141,7 +6212,7 @@ MonoBehaviour:
   - name: Enemy_1
     poolKey: Enemy_1
     startAfter: 2
-    interval: 1
+    interval: 5
     burst: 1
     burstGrowEvery: 30
     burstGrowBy: 0
@@ -6150,7 +6221,7 @@ MonoBehaviour:
   - name: Enemy_2
     poolKey: Enemy_2
     startAfter: 1
-    interval: 3
+    interval: 7
     burst: 1
     burstGrowEvery: 30
     burstGrowBy: 0

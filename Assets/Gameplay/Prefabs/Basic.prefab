@@ -4848,7 +4848,7 @@ GameObject:
   - component: {fileID: -4703347880699303876}
   - component: {fileID: 4146404359445142240}
   - component: {fileID: 5862861474786827359}
-  - component: {fileID: 8303297555356202863}
+  - component: {fileID: -11571033827702089}
   m_Layer: 0
   m_Name: Basic
   m_TagString: Enemy
@@ -4952,7 +4952,7 @@ MonoBehaviour:
   hitDisableCooldown: 0.05
   hitReact: {fileID: 883735973750297530}
   hitStopTime: 0.04
---- !u!114 &8303297555356202863
+--- !u!114 &-11571033827702089
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4961,14 +4961,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 3166030119217381912}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a20474210039b8a409d71380e4fbd158, type: 3}
+  m_Script: {fileID: 11500000, guid: 2d298c82935e7d94a9783e9015c40a91, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Gameplay.Units.Movement.DelayedInertiaSeekMovement
+  m_EditorClassIdentifier: Assembly-CSharp::Gameplay.Units.Movement.RandomArenaWanderMovement
+  padding: 0.4
   playerTag: Player
-  startDelayMin: 3
-  startDelayMax: 5
   maxSpeed: 1
   acceleration: 2
+  changeDirMin: 1.5
+  changeDirMax: 2
+  returnSpeedMultiplier: 1
+  returnAccelMultiplier: 1
   enemyImage: {fileID: 4430526678666534219}
   angleOffsetDeg: 0
 --- !u!1 &3267087403128351279

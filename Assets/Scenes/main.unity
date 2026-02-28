@@ -3556,7 +3556,7 @@ MonoBehaviour:
   lightRadiusAddAtApex: 0
   lightResponse: 1
   playerCollider: {fileID: 0}
-  jumpDuration: 1
+  jumpDuration: 1.5
   jumpHeight: 1.5
   invulnEdgeTime: 0.05
 --- !u!114 &793331823

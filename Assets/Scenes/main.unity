@@ -3504,7 +3504,7 @@ MonoBehaviour:
   pool: {fileID: 1644947991}
   bulletKey: Bullet
   muzzle: {fileID: 0}
-  fireInterval: 0.05
+  fireInterval: 0.2
 --- !u!114 &793331820
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6138,8 +6138,8 @@ MonoBehaviour:
   pool: {fileID: 1644947991}
   runtimeParent: {fileID: 1625290431}
   types:
-  - name: Enemy_1
-    poolKey: Enemy_1
+  - name: Fast
+    poolKey: Fast
     startAfter: 2
     interval: 1
     burst: 1
@@ -6147,10 +6147,19 @@ MonoBehaviour:
     burstGrowBy: 0
     burstMax: 8
     weight: 1
-  - name: Enemy_2
-    poolKey: Enemy_2
+  - name: Basic
+    poolKey: Basic
     startAfter: 1
     interval: 3
+    burst: 1
+    burstGrowEvery: 30
+    burstGrowBy: 0
+    burstMax: 5
+    weight: 1
+  - name: Strong
+    poolKey: Strong
+    startAfter: 1
+    interval: 10
     burst: 1
     burstGrowEvery: 30
     burstGrowBy: 0
@@ -6647,11 +6656,14 @@ MonoBehaviour:
   - key: Bullet
     prefab: {fileID: 1839681505625045738, guid: 9f57dcbd57cfcdf4c8094a0d9024c6bf, type: 3}
     warmup: 60
-  - key: Enemy_1
+  - key: Fast
     prefab: {fileID: 1361199330958022037, guid: d3eb9753908fb1549a972bba17dce008, type: 3}
     warmup: 50
-  - key: Enemy_2
+  - key: Basic
     prefab: {fileID: 3166030119217381912, guid: 9aaa752a0e220f54f977b2d559fcc6ea, type: 3}
+    warmup: 50
+  - key: Strong
+    prefab: {fileID: 3166030119217381912, guid: 7cc120c20b110bb4aa8dde085166f71a, type: 3}
     warmup: 50
 --- !u!4 &1644947992
 Transform:

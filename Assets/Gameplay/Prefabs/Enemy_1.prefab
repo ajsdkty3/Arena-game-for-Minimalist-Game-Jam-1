@@ -209,8 +209,8 @@ MonoBehaviour:
   hitDisableCooldown: 0.05
   hitReact: {fileID: 2473970951379742766}
   hitStopTime: 0.04
-  deathClip: {fileID: 8300000, guid: ee752048a7ddbef4d82c33eddc3fa53b, type: 3}
-  deathVolume: 0.1
+  deathClip: {fileID: 8300000, guid: 8470e52b0c525cd45ad7215f05a6fe97, type: 3}
+  deathVolume: 1
   randomDeathPitch: 1
   deathPitchMin: 0.9
   deathPitchMax: 1.1
@@ -247,7 +247,7 @@ MonoBehaviour:
   startClip: {fileID: 8300000, guid: 6bf9e1b67155ce94e9797112f31a5119, type: 3}
   nearClip: {fileID: 0}
   farClip: {fileID: 0}
-  volume: 0.01
+  volume: 0.05
   randomPitch: 1
   pitchMin: 0.95
   pitchMax: 1.05

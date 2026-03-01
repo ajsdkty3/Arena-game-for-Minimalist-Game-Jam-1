@@ -3,12 +3,56 @@
   "WorkspaceRootPath": "C:\\Users\\new99\\Desktop\\minijam prototype\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{8E77633B-693A-6D3F-0179-24804B00210C}|Assembly-CSharp.csproj|c:\\users\\new99\\desktop\\minijam prototype\\assets\\gameplay\\scripts\\units\\holylight\\holylightfx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8E77633B-693A-6D3F-0179-24804B00210C}|Assembly-CSharp.csproj|solutionrelative:assets\\gameplay\\scripts\\units\\holylight\\holylightfx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{8E77633B-693A-6D3F-0179-24804B00210C}|Assembly-CSharp.csproj|c:\\users\\new99\\desktop\\minijam prototype\\assets\\gameplay\\scripts\\units\\enemy\\enemymovement\\randomarenawandermovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8E77633B-693A-6D3F-0179-24804B00210C}|Assembly-CSharp.csproj|solutionrelative:assets\\gameplay\\scripts\\units\\enemy\\enemymovement\\randomarenawandermovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8E77633B-693A-6D3F-0179-24804B00210C}|Assembly-CSharp.csproj|c:\\users\\new99\\desktop\\minijam prototype\\assets\\gameplay\\scripts\\arena\\arenacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8E77633B-693A-6D3F-0179-24804B00210C}|Assembly-CSharp.csproj|solutionrelative:assets\\gameplay\\scripts\\arena\\arenacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8E77633B-693A-6D3F-0179-24804B00210C}|Assembly-CSharp.csproj|C:\\Users\\new99\\Desktop\\minijam prototype\\assets\\gameplay\\scripts\\units\\enemy\\enemymovement\\delayedinertiaseekmovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8E77633B-693A-6D3F-0179-24804B00210C}|Assembly-CSharp.csproj|solutionrelative:assets\\gameplay\\scripts\\units\\enemy\\enemymovement\\delayedinertiaseekmovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8E77633B-693A-6D3F-0179-24804B00210C}|Assembly-CSharp.csproj|C:\\Users\\new99\\Desktop\\minijam prototype\\assets\\gameplay\\scripts\\core\\camerashake2d.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8E77633B-693A-6D3F-0179-24804B00210C}|Assembly-CSharp.csproj|solutionrelative:assets\\gameplay\\scripts\\core\\camerashake2d.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8E77633B-693A-6D3F-0179-24804B00210C}|Assembly-CSharp.csproj|C:\\Users\\new99\\Desktop\\minijam prototype\\assets\\gameplay\\scripts\\player\\playerhealth.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8E77633B-693A-6D3F-0179-24804B00210C}|Assembly-CSharp.csproj|solutionrelative:assets\\gameplay\\scripts\\player\\playerhealth.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8E77633B-693A-6D3F-0179-24804B00210C}|Assembly-CSharp.csproj|C:\\Users\\new99\\Desktop\\minijam prototype\\assets\\gameplay\\scripts\\player\\playershoot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8E77633B-693A-6D3F-0179-24804B00210C}|Assembly-CSharp.csproj|solutionrelative:assets\\gameplay\\scripts\\player\\playershoot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{8E77633B-693A-6D3F-0179-24804B00210C}|Assembly-CSharp.csproj|C:\\Users\\new99\\Desktop\\minijam prototype\\assets\\gameplay\\scripts\\units\\enemy\\enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8E77633B-693A-6D3F-0179-24804B00210C}|Assembly-CSharp.csproj|solutionrelative:assets\\gameplay\\scripts\\units\\enemy\\enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8E77633B-693A-6D3F-0179-24804B00210C}|Assembly-CSharp.csproj|C:\\Users\\new99\\Desktop\\minijam prototype\\assets\\gameplay\\scripts\\units\\enemy\\distanceenableparticlebyplayer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8E77633B-693A-6D3F-0179-24804B00210C}|Assembly-CSharp.csproj|solutionrelative:assets\\gameplay\\scripts\\units\\enemy\\distanceenableparticlebyplayer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8E77633B-693A-6D3F-0179-24804B00210C}|Assembly-CSharp.csproj|C:\\Users\\new99\\Desktop\\minijam prototype\\assets\\gameplay\\scripts\\units\\enemy\\distanceplayaudiobyplayer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8E77633B-693A-6D3F-0179-24804B00210C}|Assembly-CSharp.csproj|solutionrelative:assets\\gameplay\\scripts\\units\\enemy\\distanceplayaudiobyplayer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\new99\\Desktop\\minijam prototype\\Assets\\Gameplay\\Scripts\\Core\\SfxOneShotHub.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Gameplay\\Scripts\\Core\\SfxOneShotHub.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8E77633B-693A-6D3F-0179-24804B00210C}|Assembly-CSharp.csproj|C:\\Users\\new99\\Desktop\\minijam prototype\\assets\\gameplay\\scripts\\core\\enemysfxmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8E77633B-693A-6D3F-0179-24804B00210C}|Assembly-CSharp.csproj|solutionrelative:assets\\gameplay\\scripts\\core\\enemysfxmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8E77633B-693A-6D3F-0179-24804B00210C}|Assembly-CSharp.csproj|C:\\Users\\new99\\Desktop\\minijam prototype\\assets\\gameplay\\scripts\\units\\enemy\\enemymovement\\inertiaseekmovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8E77633B-693A-6D3F-0179-24804B00210C}|Assembly-CSharp.csproj|solutionrelative:assets\\gameplay\\scripts\\units\\enemy\\enemymovement\\inertiaseekmovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8E77633B-693A-6D3F-0179-24804B00210C}|Assembly-CSharp.csproj|C:\\Users\\new99\\Desktop\\minijam prototype\\assets\\gameplay\\scripts\\units\\holylight\\holylightfx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8E77633B-693A-6D3F-0179-24804B00210C}|Assembly-CSharp.csproj|solutionrelative:assets\\gameplay\\scripts\\units\\holylight\\holylightfx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{8E77633B-693A-6D3F-0179-24804B00210C}|Assembly-CSharp.csproj|C:\\Users\\new99\\Desktop\\minijam prototype\\assets\\gameplay\\scripts\\units\\holylight\\holylightdamage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -23,10 +67,6 @@
       "RelativeMoniker": "D:0:0:{8E77633B-693A-6D3F-0179-24804B00210C}|Assembly-CSharp.csproj|solutionrelative:assets\\gameplay\\scripts\\units\\holylight\\holylightfollow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8E77633B-693A-6D3F-0179-24804B00210C}|Assembly-CSharp.csproj|C:\\Users\\new99\\Desktop\\minijam prototype\\assets\\gameplay\\scripts\\player\\playerhealth.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8E77633B-693A-6D3F-0179-24804B00210C}|Assembly-CSharp.csproj|solutionrelative:assets\\gameplay\\scripts\\player\\playerhealth.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{8E77633B-693A-6D3F-0179-24804B00210C}|Assembly-CSharp.csproj|C:\\Users\\new99\\Desktop\\minijam prototype\\assets\\gameplay\\scripts\\player\\playerlookatmouse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8E77633B-693A-6D3F-0179-24804B00210C}|Assembly-CSharp.csproj|solutionrelative:assets\\gameplay\\scripts\\player\\playerlookatmouse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -35,16 +75,8 @@
       "RelativeMoniker": "D:0:0:{8E77633B-693A-6D3F-0179-24804B00210C}|Assembly-CSharp.csproj|solutionrelative:assets\\gameplay\\scripts\\player\\lightfollowlag.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8E77633B-693A-6D3F-0179-24804B00210C}|Assembly-CSharp.csproj|C:\\Users\\new99\\Desktop\\minijam prototype\\assets\\gameplay\\scripts\\units\\enemy\\enemymovement\\delayedinertiaseekmovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8E77633B-693A-6D3F-0179-24804B00210C}|Assembly-CSharp.csproj|solutionrelative:assets\\gameplay\\scripts\\units\\enemy\\enemymovement\\delayedinertiaseekmovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{8E77633B-693A-6D3F-0179-24804B00210C}|Assembly-CSharp.csproj|C:\\Users\\new99\\Desktop\\minijam prototype\\assets\\gameplay\\scripts\\units\\enemy\\enemymovement\\seekmovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8E77633B-693A-6D3F-0179-24804B00210C}|Assembly-CSharp.csproj|solutionrelative:assets\\gameplay\\scripts\\units\\enemy\\enemymovement\\seekmovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8E77633B-693A-6D3F-0179-24804B00210C}|Assembly-CSharp.csproj|C:\\Users\\new99\\Desktop\\minijam prototype\\assets\\gameplay\\scripts\\units\\enemy\\enemymovement\\inertiaseekmovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8E77633B-693A-6D3F-0179-24804B00210C}|Assembly-CSharp.csproj|solutionrelative:assets\\gameplay\\scripts\\units\\enemy\\enemymovement\\inertiaseekmovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{8E77633B-693A-6D3F-0179-24804B00210C}|Assembly-CSharp.csproj|C:\\Users\\new99\\Desktop\\minijam prototype\\assets\\gameplay\\scripts\\units\\enemy\\enemyhitreact.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -87,68 +119,141 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "HolyLightFX.cs",
-              "DocumentMoniker": "C:\\Users\\new99\\Desktop\\minijam prototype\\Assets\\Gameplay\\Scripts\\Units\\HolyLight\\HolyLightFX.cs",
-              "RelativeDocumentMoniker": "Assets\\Gameplay\\Scripts\\Units\\HolyLight\\HolyLightFX.cs",
-              "ToolTip": "C:\\Users\\new99\\Desktop\\minijam prototype\\Assets\\Gameplay\\Scripts\\Units\\HolyLight\\HolyLightFX.cs",
-              "RelativeToolTip": "Assets\\Gameplay\\Scripts\\Units\\HolyLight\\HolyLightFX.cs",
-              "ViewState": "AgIAAAQBAAAAAAAAAAAmwB4BAAABAAAAAAAAAA==",
+              "Title": "RandomArenaWanderMovement.cs",
+              "DocumentMoniker": "C:\\Users\\new99\\Desktop\\minijam prototype\\Assets\\Gameplay\\Scripts\\Units\\Enemy\\EnemyMovement\\RandomArenaWanderMovement.cs",
+              "RelativeDocumentMoniker": "Assets\\Gameplay\\Scripts\\Units\\Enemy\\EnemyMovement\\RandomArenaWanderMovement.cs",
+              "ToolTip": "C:\\Users\\new99\\Desktop\\minijam prototype\\Assets\\Gameplay\\Scripts\\Units\\Enemy\\EnemyMovement\\RandomArenaWanderMovement.cs",
+              "RelativeToolTip": "Assets\\Gameplay\\Scripts\\Units\\Enemy\\EnemyMovement\\RandomArenaWanderMovement.cs",
+              "ViewState": "AgIAAIgAAAAAAAAAAAAmwKIAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-28T01:24:59.471Z",
+              "WhenOpened": "2026-03-01T08:59:13.246Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ArenaController.cs",
+              "DocumentMoniker": "C:\\Users\\new99\\Desktop\\minijam prototype\\Assets\\Gameplay\\Scripts\\Arena\\ArenaController.cs",
+              "RelativeDocumentMoniker": "Assets\\Gameplay\\Scripts\\Arena\\ArenaController.cs",
+              "ToolTip": "C:\\Users\\new99\\Desktop\\minijam prototype\\Assets\\Gameplay\\Scripts\\Arena\\ArenaController.cs",
+              "RelativeToolTip": "Assets\\Gameplay\\Scripts\\Arena\\ArenaController.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAgwBwAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-01T08:58:36.403Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "DistancePlayAudioByPlayer.cs",
+              "DocumentMoniker": "C:\\Users\\new99\\Desktop\\minijam prototype\\Assets\\Gameplay\\Scripts\\Units\\Enemy\\DistancePlayAudioByPlayer.cs",
+              "RelativeDocumentMoniker": "Assets\\Gameplay\\Scripts\\Units\\Enemy\\DistancePlayAudioByPlayer.cs",
+              "ToolTip": "C:\\Users\\new99\\Desktop\\minijam prototype\\Assets\\Gameplay\\Scripts\\Units\\Enemy\\DistancePlayAudioByPlayer.cs",
+              "RelativeToolTip": "Assets\\Gameplay\\Scripts\\Units\\Enemy\\DistancePlayAudioByPlayer.cs",
+              "ViewState": "AgIAAGcAAAAAAAAAAAA6wIEAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-01T08:15:15.212Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "DistanceEnableParticleByPlayer.cs",
+              "DocumentMoniker": "C:\\Users\\new99\\Desktop\\minijam prototype\\Assets\\Gameplay\\Scripts\\Units\\Enemy\\DistanceEnableParticleByPlayer.cs",
+              "RelativeDocumentMoniker": "Assets\\Gameplay\\Scripts\\Units\\Enemy\\DistanceEnableParticleByPlayer.cs",
+              "ToolTip": "C:\\Users\\new99\\Desktop\\minijam prototype\\Assets\\Gameplay\\Scripts\\Units\\Enemy\\DistanceEnableParticleByPlayer.cs",
+              "RelativeToolTip": "Assets\\Gameplay\\Scripts\\Units\\Enemy\\DistanceEnableParticleByPlayer.cs",
+              "ViewState": "AgIAAFoAAAAAAAAAAAAmwHEAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-01T07:57:27.35Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "HolyLightFollow.cs",
-              "DocumentMoniker": "C:\\Users\\new99\\Desktop\\minijam prototype\\Assets\\Gameplay\\Scripts\\Units\\HolyLight\\HolyLightFollow.cs",
-              "RelativeDocumentMoniker": "Assets\\Gameplay\\Scripts\\Units\\HolyLight\\HolyLightFollow.cs",
-              "ToolTip": "C:\\Users\\new99\\Desktop\\minijam prototype\\Assets\\Gameplay\\Scripts\\Units\\HolyLight\\HolyLightFollow.cs",
-              "RelativeToolTip": "Assets\\Gameplay\\Scripts\\Units\\HolyLight\\HolyLightFollow.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAkwBMAAAAcAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-28T01:08:41.348Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "HolyLightDamage.cs",
-              "DocumentMoniker": "C:\\Users\\new99\\Desktop\\minijam prototype\\Assets\\Gameplay\\Scripts\\Units\\HolyLight\\HolyLightDamage.cs",
-              "RelativeDocumentMoniker": "Assets\\Gameplay\\Scripts\\Units\\HolyLight\\HolyLightDamage.cs",
-              "ToolTip": "C:\\Users\\new99\\Desktop\\minijam prototype\\Assets\\Gameplay\\Scripts\\Units\\HolyLight\\HolyLightDamage.cs",
-              "RelativeToolTip": "Assets\\Gameplay\\Scripts\\Units\\HolyLight\\HolyLightDamage.cs",
-              "ViewState": "AgIAAEUBAAAAAAAAAAAkwFsBAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-27T22:51:17.658Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
               "Title": "PlayerHealth.cs",
               "DocumentMoniker": "C:\\Users\\new99\\Desktop\\minijam prototype\\Assets\\Gameplay\\Scripts\\Player\\PlayerHealth.cs",
               "RelativeDocumentMoniker": "Assets\\Gameplay\\Scripts\\Player\\PlayerHealth.cs",
               "ToolTip": "C:\\Users\\new99\\Desktop\\minijam prototype\\Assets\\Gameplay\\Scripts\\Player\\PlayerHealth.cs",
               "RelativeToolTip": "Assets\\Gameplay\\Scripts\\Player\\PlayerHealth.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAiwAgAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAkwB4AAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-02-28T01:07:34.765Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 5,
+              "Title": "PlayerShoot.cs",
+              "DocumentMoniker": "C:\\Users\\new99\\Desktop\\minijam prototype\\Assets\\Gameplay\\Scripts\\Player\\PlayerShoot.cs",
+              "RelativeDocumentMoniker": "Assets\\Gameplay\\Scripts\\Player\\PlayerShoot.cs",
+              "ToolTip": "C:\\Users\\new99\\Desktop\\minijam prototype\\Assets\\Gameplay\\Scripts\\Player\\PlayerShoot.cs",
+              "RelativeToolTip": "Assets\\Gameplay\\Scripts\\Player\\PlayerShoot.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAADwvwAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-01T08:48:37.035Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "DelayedInertiaSeekMovement.cs",
+              "DocumentMoniker": "C:\\Users\\new99\\Desktop\\minijam prototype\\Assets\\Gameplay\\Scripts\\Units\\Enemy\\EnemyMovement\\DelayedInertiaSeekMovement.cs",
+              "RelativeDocumentMoniker": "Assets\\Gameplay\\Scripts\\Units\\Enemy\\EnemyMovement\\DelayedInertiaSeekMovement.cs",
+              "ToolTip": "C:\\Users\\new99\\Desktop\\minijam prototype\\Assets\\Gameplay\\Scripts\\Units\\Enemy\\EnemyMovement\\DelayedInertiaSeekMovement.cs",
+              "RelativeToolTip": "Assets\\Gameplay\\Scripts\\Units\\Enemy\\EnemyMovement\\DelayedInertiaSeekMovement.cs",
+              "ViewState": "AgIAAFYAAAAAAAAAAAAmwG0AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-27T17:18:51.174Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "SfxOneShotHub.cs",
+              "DocumentMoniker": "C:\\Users\\new99\\Desktop\\minijam prototype\\Assets\\Gameplay\\Scripts\\Core\\SfxOneShotHub.cs",
+              "RelativeDocumentMoniker": "Assets\\Gameplay\\Scripts\\Core\\SfxOneShotHub.cs",
+              "ToolTip": "C:\\Users\\new99\\Desktop\\minijam prototype\\Assets\\Gameplay\\Scripts\\Core\\SfxOneShotHub.cs",
+              "RelativeToolTip": "Assets\\Gameplay\\Scripts\\Core\\SfxOneShotHub.cs",
+              "ViewState": "AgIAACkAAAAAAAAAAAAmwDoAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-01T08:29:01.341Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "CameraShake2D.cs",
+              "DocumentMoniker": "C:\\Users\\new99\\Desktop\\minijam prototype\\Assets\\Gameplay\\Scripts\\Core\\CameraShake2D.cs",
+              "RelativeDocumentMoniker": "Assets\\Gameplay\\Scripts\\Core\\CameraShake2D.cs",
+              "ToolTip": "C:\\Users\\new99\\Desktop\\minijam prototype\\Assets\\Gameplay\\Scripts\\Core\\CameraShake2D.cs",
+              "RelativeToolTip": "Assets\\Gameplay\\Scripts\\Core\\CameraShake2D.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAkwBAAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-01T08:49:29.915Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "Enemy.cs",
               "DocumentMoniker": "C:\\Users\\new99\\Desktop\\minijam prototype\\Assets\\Gameplay\\Scripts\\Units\\Enemy\\Enemy.cs",
               "RelativeDocumentMoniker": "Assets\\Gameplay\\Scripts\\Units\\Enemy\\Enemy.cs",
               "ToolTip": "C:\\Users\\new99\\Desktop\\minijam prototype\\Assets\\Gameplay\\Scripts\\Units\\Enemy\\Enemy.cs",
               "RelativeToolTip": "Assets\\Gameplay\\Scripts\\Units\\Enemy\\Enemy.cs",
-              "ViewState": "AgIAAFUAAAAAAAAAAAAkwG0AAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAG8AAAAAAAAAAAAmwH8AAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-27T16:47:20.3Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-27T16:47:20.3Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 10,
+              "Title": "EnemySfxManager.cs",
+              "DocumentMoniker": "C:\\Users\\new99\\Desktop\\minijam prototype\\Assets\\Gameplay\\Scripts\\Core\\EnemySfxManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Gameplay\\Scripts\\Core\\EnemySfxManager.cs",
+              "ToolTip": "C:\\Users\\new99\\Desktop\\minijam prototype\\Assets\\Gameplay\\Scripts\\Core\\EnemySfxManager.cs",
+              "RelativeToolTip": "Assets\\Gameplay\\Scripts\\Core\\EnemySfxManager.cs",
+              "ViewState": "AgIAAFQAAAAAAAAAAAAmwFYAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-01T08:16:30.196Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
               "Title": "PlayerLookAtMouse.cs",
               "DocumentMoniker": "C:\\Users\\new99\\Desktop\\minijam prototype\\Assets\\Gameplay\\Scripts\\Player\\PlayerLookAtMouse.cs",
               "RelativeDocumentMoniker": "Assets\\Gameplay\\Scripts\\Player\\PlayerLookAtMouse.cs",
@@ -160,7 +265,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 14,
               "Title": "FlickeringLight.cs",
               "DocumentMoniker": "C:\\Users\\new99\\Desktop\\minijam prototype\\Assets\\Gameplay\\Scripts\\Units\\HolyLight\\FlickeringLight.cs",
               "RelativeDocumentMoniker": "Assets\\Gameplay\\Scripts\\Units\\HolyLight\\FlickeringLight.cs",
@@ -172,7 +277,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 17,
               "Title": "LightFollowLag.cs",
               "DocumentMoniker": "C:\\Users\\new99\\Desktop\\minijam prototype\\Assets\\Gameplay\\Scripts\\Player\\LightFollowLag.cs",
               "RelativeDocumentMoniker": "Assets\\Gameplay\\Scripts\\Player\\LightFollowLag.cs",
@@ -184,31 +289,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "SeekMovement.cs",
-              "DocumentMoniker": "C:\\Users\\new99\\Desktop\\minijam prototype\\Assets\\Gameplay\\Scripts\\Units\\Enemy\\EnemyMovement\\SeekMovement.cs",
-              "RelativeDocumentMoniker": "Assets\\Gameplay\\Scripts\\Units\\Enemy\\EnemyMovement\\SeekMovement.cs",
-              "ToolTip": "C:\\Users\\new99\\Desktop\\minijam prototype\\Assets\\Gameplay\\Scripts\\Units\\Enemy\\EnemyMovement\\SeekMovement.cs",
-              "RelativeToolTip": "Assets\\Gameplay\\Scripts\\Units\\Enemy\\EnemyMovement\\SeekMovement.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAADwvw0AAAAWAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-28T00:55:52.548Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "DelayedInertiaSeekMovement.cs",
-              "DocumentMoniker": "C:\\Users\\new99\\Desktop\\minijam prototype\\Assets\\Gameplay\\Scripts\\Units\\Enemy\\EnemyMovement\\DelayedInertiaSeekMovement.cs",
-              "RelativeDocumentMoniker": "Assets\\Gameplay\\Scripts\\Units\\Enemy\\EnemyMovement\\DelayedInertiaSeekMovement.cs",
-              "ToolTip": "C:\\Users\\new99\\Desktop\\minijam prototype\\Assets\\Gameplay\\Scripts\\Units\\Enemy\\EnemyMovement\\DelayedInertiaSeekMovement.cs",
-              "RelativeToolTip": "Assets\\Gameplay\\Scripts\\Units\\Enemy\\EnemyMovement\\DelayedInertiaSeekMovement.cs",
-              "ViewState": "AgIAAFYAAAAAAAAAAAAmwGIAAAAjAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-27T17:18:51.174Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 11,
               "Title": "InertiaSeekMovement.cs",
               "DocumentMoniker": "C:\\Users\\new99\\Desktop\\minijam prototype\\Assets\\Gameplay\\Scripts\\Units\\Enemy\\EnemyMovement\\InertiaSeekMovement.cs",
               "RelativeDocumentMoniker": "Assets\\Gameplay\\Scripts\\Units\\Enemy\\EnemyMovement\\InertiaSeekMovement.cs",
@@ -220,7 +301,55 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 13,
+              "Title": "HolyLightDamage.cs",
+              "DocumentMoniker": "C:\\Users\\new99\\Desktop\\minijam prototype\\Assets\\Gameplay\\Scripts\\Units\\HolyLight\\HolyLightDamage.cs",
+              "RelativeDocumentMoniker": "Assets\\Gameplay\\Scripts\\Units\\HolyLight\\HolyLightDamage.cs",
+              "ToolTip": "C:\\Users\\new99\\Desktop\\minijam prototype\\Assets\\Gameplay\\Scripts\\Units\\HolyLight\\HolyLightDamage.cs",
+              "RelativeToolTip": "Assets\\Gameplay\\Scripts\\Units\\HolyLight\\HolyLightDamage.cs",
+              "ViewState": "AgIAAEUBAAAAAAAAAAAkwFsBAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-27T22:51:17.658Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "HolyLightFollow.cs",
+              "DocumentMoniker": "C:\\Users\\new99\\Desktop\\minijam prototype\\Assets\\Gameplay\\Scripts\\Units\\HolyLight\\HolyLightFollow.cs",
+              "RelativeDocumentMoniker": "Assets\\Gameplay\\Scripts\\Units\\HolyLight\\HolyLightFollow.cs",
+              "ToolTip": "C:\\Users\\new99\\Desktop\\minijam prototype\\Assets\\Gameplay\\Scripts\\Units\\HolyLight\\HolyLightFollow.cs",
+              "RelativeToolTip": "Assets\\Gameplay\\Scripts\\Units\\HolyLight\\HolyLightFollow.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAkwBMAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-28T01:08:41.348Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "HolyLightFX.cs",
+              "DocumentMoniker": "C:\\Users\\new99\\Desktop\\minijam prototype\\Assets\\Gameplay\\Scripts\\Units\\HolyLight\\HolyLightFX.cs",
+              "RelativeDocumentMoniker": "Assets\\Gameplay\\Scripts\\Units\\HolyLight\\HolyLightFX.cs",
+              "ToolTip": "C:\\Users\\new99\\Desktop\\minijam prototype\\Assets\\Gameplay\\Scripts\\Units\\HolyLight\\HolyLightFX.cs",
+              "RelativeToolTip": "Assets\\Gameplay\\Scripts\\Units\\HolyLight\\HolyLightFX.cs",
+              "ViewState": "AgIAAAQBAAAAAAAAAAAmwB4BAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-28T01:24:59.471Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "SeekMovement.cs",
+              "DocumentMoniker": "C:\\Users\\new99\\Desktop\\minijam prototype\\Assets\\Gameplay\\Scripts\\Units\\Enemy\\EnemyMovement\\SeekMovement.cs",
+              "RelativeDocumentMoniker": "Assets\\Gameplay\\Scripts\\Units\\Enemy\\EnemyMovement\\SeekMovement.cs",
+              "ToolTip": "C:\\Users\\new99\\Desktop\\minijam prototype\\Assets\\Gameplay\\Scripts\\Units\\Enemy\\EnemyMovement\\SeekMovement.cs",
+              "RelativeToolTip": "Assets\\Gameplay\\Scripts\\Units\\Enemy\\EnemyMovement\\SeekMovement.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAADwvw0AAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-28T00:55:52.548Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
               "Title": "EnemyHitReact.cs",
               "DocumentMoniker": "C:\\Users\\new99\\Desktop\\minijam prototype\\Assets\\Gameplay\\Scripts\\Units\\Enemy\\EnemyHitReact.cs",
               "RelativeDocumentMoniker": "Assets\\Gameplay\\Scripts\\Units\\Enemy\\EnemyHitReact.cs",
@@ -232,7 +361,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 21,
               "Title": "SlimeSquashIdle.cs",
               "DocumentMoniker": "C:\\Users\\new99\\Desktop\\minijam prototype\\Assets\\Gameplay\\Scripts\\Units\\HolyLight\\SlimeSquashIdle.cs",
               "RelativeDocumentMoniker": "Assets\\Gameplay\\Scripts\\Units\\HolyLight\\SlimeSquashIdle.cs",
@@ -244,7 +373,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 20,
               "Title": "Bullet.cs",
               "DocumentMoniker": "C:\\Users\\new99\\Desktop\\minijam prototype\\Assets\\Gameplay\\Scripts\\Projectiles\\Bullet.cs",
               "RelativeDocumentMoniker": "Assets\\Gameplay\\Scripts\\Projectiles\\Bullet.cs",
@@ -256,7 +385,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 24,
               "Title": "PolygonGenerator.cs",
               "DocumentMoniker": "C:\\Users\\new99\\Desktop\\minijam prototype\\Assets\\Gameplay\\Scripts\\Units\\Enemy\\PolygonGenerator.cs",
               "RelativeDocumentMoniker": "Assets\\Gameplay\\Scripts\\Units\\Enemy\\PolygonGenerator.cs",
@@ -268,7 +397,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 22,
               "Title": "DistanceColorByPlayer.cs",
               "DocumentMoniker": "C:\\Users\\new99\\Desktop\\minijam prototype\\Assets\\Gameplay\\Scripts\\Units\\Enemy\\DistanceColorByPlayer.cs",
               "RelativeDocumentMoniker": "Assets\\Gameplay\\Scripts\\Units\\Enemy\\DistanceColorByPlayer.cs",
@@ -280,7 +409,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 23,
               "Title": "PlayerJump.cs",
               "DocumentMoniker": "C:\\Users\\new99\\Desktop\\minijam prototype\\Assets\\Gameplay\\Scripts\\Player\\PlayerJump.cs",
               "RelativeDocumentMoniker": "Assets\\Gameplay\\Scripts\\Player\\PlayerJump.cs",
@@ -292,7 +421,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 25,
               "Title": "PlayerController.cs",
               "DocumentMoniker": "C:\\Users\\new99\\Desktop\\minijam prototype\\Assets\\Gameplay\\Scripts\\Player\\PlayerController.cs",
               "RelativeDocumentMoniker": "Assets\\Gameplay\\Scripts\\Player\\PlayerController.cs",

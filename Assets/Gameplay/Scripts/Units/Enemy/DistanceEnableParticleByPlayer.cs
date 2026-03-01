@@ -6,35 +6,46 @@ public class DistanceEnableParticleByPlayer : MonoBehaviour {
     public string playerTag = "Player";
 
     [Header("Particle")]
-    [Tooltip("拖进要控制的 ParticleSystem（一般是 visual 子物体的粒子）")]
     public ParticleSystem ps;
 
     [Header("Distance")]
-    [Tooltip("进入这个距离就开启")]
     public float enableDistance = 3f;
-
-    [Tooltip("离开到这个距离才关闭（建议 > enableDistance，避免抖动）")]
     public float disableDistance = 3.1f;
+
+    [Header("Size Boost")]
+    [Tooltip("在这个距离内放大粒子尺寸")]
+    public float boostDistance = 1.5f;
+
+    [Tooltip("放大倍数")]
+    public float sizeMultiplier = 2f;
 
     [Header("Delay Lock (optional)")]
     public bool lockUntilMovementActive = true;
 
     Transform _player;
     bool _on;
+    bool _boosted;
 
-    // optional: 在父物体（logic）上找
     DelayedInertiaSeekMovement _delayedMove;
+
+    float _baseSizeMultiplier;
 
     void Awake() {
         if (ps == null)
             ps = GetComponentInChildren<ParticleSystem>(true);
 
         _delayedMove = GetComponentInParent<DelayedInertiaSeekMovement>();
+
+        if (ps != null) {
+            var main = ps.main;
+            _baseSizeMultiplier = main.startSizeMultiplier;
+        }
     }
 
     void OnEnable() {
         TryFindPlayer();
-        SetOn(false, true); // 强制关一次
+        SetOn(false, true);
+        ResetSize();
     }
 
     void Update() {
@@ -54,10 +65,20 @@ public class DistanceEnableParticleByPlayer : MonoBehaviour {
 
         float d = Vector2.Distance(transform.position, _player.position);
 
+        // 控制开启/关闭
         if (!_on && d <= enableDistance)
             SetOn(true);
         else if (_on && d >= disableDistance)
             SetOn(false);
+
+        // 控制尺寸放大
+        if (d <= boostDistance && !_boosted) {
+            ApplySize(_baseSizeMultiplier * sizeMultiplier);
+            _boosted = true;
+        } else if (d > boostDistance && _boosted) {
+            ResetSize();
+            _boosted = false;
+        }
     }
 
     void TryFindPlayer() {
@@ -76,9 +97,18 @@ public class DistanceEnableParticleByPlayer : MonoBehaviour {
             if (!ps.isPlaying)
                 ps.Play(true);
         } else {
-            // StopEmittingAndClear：关掉并清空残留粒子
             if (ps.isPlaying || ps.particleCount > 0)
                 ps.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
         }
+    }
+
+    void ApplySize(float value) {
+        var main = ps.main;
+        main.startSizeMultiplier = value;
+    }
+
+    void ResetSize() {
+        var main = ps.main;
+        main.startSizeMultiplier = _baseSizeMultiplier;
     }
 }

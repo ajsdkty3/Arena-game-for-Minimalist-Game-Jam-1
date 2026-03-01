@@ -104,6 +104,8 @@ GameObject:
   - component: {fileID: 1716231547985488430}
   - component: {fileID: 5487851163038605852}
   - component: {fileID: 8076192849594241677}
+  - component: {fileID: 7043841176141698992}
+  - component: {fileID: 4937209047904818198}
   m_Layer: 0
   m_Name: Enemy_1
   m_TagString: Enemy
@@ -204,10 +206,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Gameplay.Units.Enemy
   maxHp: 3
-  holyLightTag: HolyLight
   hitDisableCooldown: 0.05
   hitReact: {fileID: 2473970951379742766}
   hitStopTime: 0.04
+  deathClip: {fileID: 8300000, guid: ee752048a7ddbef4d82c33eddc3fa53b, type: 3}
+  deathVolume: 0.1
+  randomDeathPitch: 1
+  deathPitchMin: 0.9
+  deathPitchMax: 1.1
 --- !u!114 &8076192849594241677
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -222,11 +228,132 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Gameplay.Units.Movement.InertiaSeekMovement
   maxSpeed: 1
   acceleration: 2
-  holyTag: HolyLight
   playerTag: Player
-  chasePlayerWhenDamaged: 1
   enemyImage: {fileID: 2249685244972548488}
   angleOffsetDeg: 0
+--- !u!114 &7043841176141698992
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1361199330958022037}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0eac183f901318844835a1608c2db0b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DistancePlayAudioByPlayer
+  playerTag: Player
+  startClip: {fileID: 8300000, guid: 6bf9e1b67155ce94e9797112f31a5119, type: 3}
+  nearClip: {fileID: 0}
+  farClip: {fileID: 0}
+  volume: 0.01
+  randomPitch: 1
+  pitchMin: 0.95
+  pitchMax: 1.05
+  cooldown: 0.2
+  enableDistance: 1
+  disableDistance: 3.1
+  lockUntilMovementActive: 1
+  debugLogs: 1
+  debugEverySecond: 0
+--- !u!82 &4937209047904818198
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1361199330958022037}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &3938487635157812389
 GameObject:
   m_ObjectHideFlags: 0
@@ -10029,6 +10156,8 @@ MonoBehaviour:
   ps: {fileID: 5685210131068396971}
   enableDistance: 4
   disableDistance: 4.1
+  boostDistance: 1
+  sizeMultiplier: 3
   lockUntilMovementActive: 1
 --- !u!114 &2473970951379742766
 MonoBehaviour:

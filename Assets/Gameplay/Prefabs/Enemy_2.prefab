@@ -4848,7 +4848,8 @@ GameObject:
   - component: {fileID: -4703347880699303876}
   - component: {fileID: 4146404359445142240}
   - component: {fileID: 5862861474786827359}
-  - component: {fileID: 8303297555356202863}
+  - component: {fileID: 5932879688265763480}
+  - component: {fileID: 8216381953270774432}
   m_Layer: 0
   m_Name: Enemy_2
   m_TagString: Enemy
@@ -4952,7 +4953,12 @@ MonoBehaviour:
   hitDisableCooldown: 0.05
   hitReact: {fileID: 883735973750297530}
   hitStopTime: 0.04
---- !u!114 &8303297555356202863
+  deathClip: {fileID: 8300000, guid: ee752048a7ddbef4d82c33eddc3fa53b, type: 3}
+  deathVolume: 0.1
+  randomDeathPitch: 0
+  deathPitchMin: 0.9
+  deathPitchMax: 1.1
+--- !u!114 &5932879688265763480
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4961,14 +4967,44 @@ MonoBehaviour:
   m_GameObject: {fileID: 3166030119217381912}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a20474210039b8a409d71380e4fbd158, type: 3}
+  m_Script: {fileID: 11500000, guid: 0eac183f901318844835a1608c2db0b1, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Gameplay.Units.Movement.DelayedInertiaSeekMovement
+  m_EditorClassIdentifier: Assembly-CSharp::DistancePlayAudioByPlayer_OneShot2D_Debug
   playerTag: Player
-  startDelayMin: 3
-  startDelayMax: 5
-  maxSpeed: 1
+  startClip: {fileID: 8300000, guid: 6bf9e1b67155ce94e9797112f31a5119, type: 3}
+  nearClip: {fileID: 8300000, guid: ee752048a7ddbef4d82c33eddc3fa53b, type: 3}
+  farClip: {fileID: 0}
+  volume: 0.01
+  randomPitch: 1
+  pitchMin: 0.95
+  pitchMax: 1.05
+  cooldown: 0.25
+  enableDistance: 1
+  disableDistance: 3.1
+  lockUntilMovementActive: 1
+  debugLogs: 1
+  debugEverySecond: 0
+--- !u!114 &8216381953270774432
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3166030119217381912}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2d3e697d15abb74787cc63df4705c4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Gameplay.Units.Movement.RandomArenaWanderMovement
+  arena: {fileID: 0}
+  arenaTag: Arena
+  padding: 0.2
+  startDelayMin: 0
+  startDelayMax: 0
+  maxSpeed: 2
   acceleration: 2
+  changeDirIntervalMin: 1
+  changeDirIntervalMax: 1
   enemyImage: {fileID: 4430526678666534219}
   angleOffsetDeg: 0
 --- !u!1 &3267087403128351279
@@ -5191,6 +5227,8 @@ MonoBehaviour:
   ps: {fileID: 7504718959472725479}
   enableDistance: 6
   disableDistance: 6.1
+  boostDistance: 1
+  sizeMultiplier: 3
   lockUntilMovementActive: 1
 --- !u!114 &883735973750297530
 MonoBehaviour:

@@ -247,7 +247,7 @@ MonoBehaviour:
   startClip: {fileID: 8300000, guid: 6bf9e1b67155ce94e9797112f31a5119, type: 3}
   nearClip: {fileID: 0}
   farClip: {fileID: 0}
-  volume: 0.05
+  volume: 0.01
   randomPitch: 1
   pitchMin: 0.95
   pitchMax: 1.05
@@ -269,7 +269,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -10157,7 +10157,7 @@ MonoBehaviour:
   enableDistance: 4
   disableDistance: 4.1
   boostDistance: 1
-  sizeMultiplier: 3
+  sizeMultiplier: 1
   lockUntilMovementActive: 1
 --- !u!114 &2473970951379742766
 MonoBehaviour:

@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.Rendering.Universal; // ✅ Light2D
+using UnityEngine.Rendering.Universal;
 
 namespace Gameplay.Player {
     public class PlayerJump : MonoBehaviour {
@@ -13,15 +13,19 @@ namespace Gameplay.Player {
         public Transform shadow;
 
         [Header("Shadow Tuning")]
-        [Tooltip("最高点时阴影缩放倍率（1 = 不变，0.6 = 缩小到60%）")]
         [Range(0f, 1f)]
         public float shadowScaleMultiplierAtApex = 0.6f;
 
         [Header("Jump Light (URP 2D)")]
         public Light2D playerLight;
-        [Min(0f)] public float lightIntensityAddAtApex = 0.8f; // 最高点额外强度
-        [Min(0f)] public float lightRadiusAddAtApex = 1.0f;    // 最高点额外范围(outerRadius)
-        [Range(0f, 5f)] public float lightResponse = 1f;        // 高度曲线响应(>1 更后段才变强)
+        [Min(0f)] public float lightIntensityAddAtApex = 0.8f;
+        [Min(0f)] public float lightRadiusAddAtApex = 1.0f;
+        [Range(0f, 5f)] public float lightResponse = 1f;
+
+        [Header("Audio")]
+        public AudioSource jumpAudio;   // 可选：如果不填会自动GetComponent
+        public AudioClip jumpClip;
+        [Range(0f, 1f)] public float jumpVolume = 1f;
 
         [Header("Collision")]
         public Collider2D playerCollider;
@@ -29,7 +33,6 @@ namespace Gameplay.Player {
         [Header("Jump Tuning")]
         [Min(0.05f)] public float jumpDuration = 0.35f;
         [Min(0f)] public float jumpHeight = 0.7f;
-
         [Min(0f)] public float invulnEdgeTime = 0.06f;
 
         bool _jumping;
@@ -54,14 +57,18 @@ namespace Gameplay.Player {
                 _shadowBaseScale = shadow.localScale;
             }
 
+            if (jumpAudio == null)
+                jumpAudio = GetComponent<AudioSource>();
+
             CacheLightBase();
         }
 
         void CacheLightBase() {
             if (playerLight == null)
                 return;
+
             _lightBaseIntensity = playerLight.intensity;
-            _lightBaseOuterRadius = playerLight.pointLightOuterRadius; // ✅ URP 2D 的范围
+            _lightBaseOuterRadius = playerLight.pointLightOuterRadius;
             _lightCached = true;
         }
 
@@ -82,6 +89,14 @@ namespace Gameplay.Player {
         void OnJumpPerformed(InputAction.CallbackContext ctx) {
             if (_jumping || playerImage == null)
                 return;
+
+            // ✅ 播放跳跃音效
+            if (jumpClip != null) {
+                if (jumpAudio != null)
+                    jumpAudio.PlayOneShot(jumpClip, jumpVolume);
+                else
+                    AudioSource.PlayClipAtPoint(jumpClip, transform.position, jumpVolume);
+            }
 
             _co = StartCoroutine(JumpRoutine());
         }
@@ -104,25 +119,20 @@ namespace Gameplay.Player {
                 float y = 4f * jumpHeight * u * (1f - u);
                 playerImage.localPosition = _imgBaseLocalPos + new Vector3(0f, y, 0f);
 
-                // 阴影缩放
-                float h01 = 0f;
-                if (shadow != null) {
-                    h01 = Mathf.Clamp01(y / Mathf.Max(0.0001f, jumpHeight));
-                    float multiplier = Mathf.Lerp(1f, shadowScaleMultiplierAtApex, h01);
+                float h01 = Mathf.Clamp01(y / Mathf.Max(0.0001f, jumpHeight));
 
+                if (shadow != null) {
+                    float multiplier = Mathf.Lerp(1f, shadowScaleMultiplierAtApex, h01);
                     shadow.localPosition = _shadowBaseLocalPos;
                     shadow.localScale = new Vector3(
                         _shadowBaseScale.x * multiplier,
                         _shadowBaseScale.y * multiplier,
                         _shadowBaseScale.z
                     );
-                } else {
-                    h01 = Mathf.Clamp01(y / Mathf.Max(0.0001f, jumpHeight));
                 }
 
-                // ✅ Light：随高度叠加强度 & 范围
                 if (playerLight != null && _lightCached) {
-                    float k = Mathf.Pow(h01, Mathf.Max(0.0001f, lightResponse)); // 可调“响应”
+                    float k = Mathf.Pow(h01, Mathf.Max(0.0001f, lightResponse));
                     playerLight.intensity = _lightBaseIntensity + lightIntensityAddAtApex * k;
                     playerLight.pointLightOuterRadius = _lightBaseOuterRadius + lightRadiusAddAtApex * k;
                 }
@@ -134,7 +144,6 @@ namespace Gameplay.Player {
                 yield return null;
             }
 
-            // 结束：复位
             playerImage.localPosition = _imgBaseLocalPos;
 
             if (shadow != null) {

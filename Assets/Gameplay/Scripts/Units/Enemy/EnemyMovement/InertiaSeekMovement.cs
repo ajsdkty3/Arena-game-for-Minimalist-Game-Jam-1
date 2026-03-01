@@ -19,9 +19,20 @@ namespace Gameplay.Units.Movement {
         Quaternion _imageBaseLocalRot;
         bool _cached;
 
+        float _lastMs, _lastAcc;
+
         void Awake() {
-            CacheBaseRot();
-            FindPlayer();
+            _lastMs = maxSpeed;
+            _lastAcc = acceleration;
+        }
+
+
+        void LateUpdate() {
+            if (!Mathf.Approximately(_lastMs, maxSpeed) || !Mathf.Approximately(_lastAcc, acceleration)) {
+                Debug.LogWarning($"{name} movement changed: ms {_lastMs}->{maxSpeed}, acc {_lastAcc}->{acceleration}");
+                _lastMs = maxSpeed;
+                _lastAcc = acceleration;
+            }
         }
 
         void OnValidate() {
@@ -81,6 +92,9 @@ namespace Gameplay.Units.Movement {
             Vector2 desired = to.normalized * maxSpeed;
             _vel = Vector2.MoveTowards(_vel, desired, acceleration * dt);
             self.position += (Vector3)(_vel * dt);
+
+            if (Time.frameCount % 30 == 0)
+                Debug.Log($"{name} ms={maxSpeed} acc={acceleration} dt={dt:F4} v={_vel.magnitude:F2}");
         }
     }
 }

@@ -6,6 +6,7 @@ using Gameplay.Pooling;
 
 namespace Gameplay.Units {
     public class EnemySpawner : MonoBehaviour {
+
         [Serializable]
         public class EnemyType {
             public string name = "Type";
@@ -23,18 +24,15 @@ namespace Gameplay.Units {
             public int burstGrowBy = 1;        // 每次增长多少
             public int burstMax = 20;          // burst 上限
 
-            [Header("Pick Weight")]
-            public int weight = 1; // 同时到点时按权重选
-
             [NonSerialized]
             public float nextTime; // 运行时用
         }
 
         [Header("Refs")]
         public ArenaController arena;
-        public Transform target;     // 玩家
-        public PoolService pool;     // 拖 PoolService
-        public Transform runtimeParent; // Runtime（可空；不填就用 pool.runtimeParent）
+        public Transform target;         // 玩家
+        public PoolService pool;         // 拖 PoolService
+        public Transform runtimeParent;  // Runtime（可空；不填就用 pool.runtimeParent）
 
         [Header("Enemies")]
         public List<EnemyType> types = new();
@@ -54,6 +52,9 @@ namespace Gameplay.Units {
 
             for (int i = 0; i < types.Count; i++) {
                 var t = types[i];
+                if (t == null)
+                    continue;
+
                 t.nextTime = _startTime + Mathf.Max(0f, t.startAfter);
             }
         }
@@ -73,9 +74,8 @@ namespace Gameplay.Units {
 
             float now = Time.time;
 
-            // 收集“到点要刷”的类型
+            // 收集“到点要刷”的类型（✅ 不再做权重选择）
             List<int> due = null;
-            int totalWeight = 0;
 
             for (int i = 0; i < types.Count; i++) {
                 var t = types[i];
@@ -87,48 +87,34 @@ namespace Gameplay.Units {
                 if (now >= t.nextTime) {
                     due ??= new List<int>(4);
                     due.Add(i);
-                    totalWeight += Mathf.Max(0, t.weight);
                 }
             }
 
             if (due == null || due.Count == 0)
                 return;
 
-            // 按权重选一个类型刷（避免同一帧刷多个类型）
-            int pickIndexInTypes = PickWeightedTypeIndex(due, totalWeight);
-            var type = types[pickIndexInTypes];
+            // ✅ 所有到点的类型都刷
+            for (int d = 0; d < due.Count; d++) {
+                int idx = due[d];
+                var type = types[idx];
 
-            int burstNow = GetBurstNow(type, now);
-            int canSpawn = Mathf.Min(burstNow, maxAliveTotal - _alive.Count);
+                if (_alive.Count >= maxAliveTotal)
+                    break;
 
-            for (int k = 0; k < canSpawn; k++)
-                SpawnOne(type);
+                int burstNow = GetBurstNow(type, now);
+                int canSpawn = Mathf.Min(burstNow, maxAliveTotal - _alive.Count);
 
-            // 推进下次时间（防止 interval=0 导致狂刷）
-            float itv = Mathf.Max(0.01f, type.interval);
-            type.nextTime = now + itv;
-        }
+                for (int k = 0; k < canSpawn; k++)
+                    SpawnOne(type);
 
-        int PickWeightedTypeIndex(List<int> due, int totalWeight) {
-            if (totalWeight <= 0)
-                return due[UnityEngine.Random.Range(0, due.Count)];
-
-            int r = UnityEngine.Random.Range(1, totalWeight + 1);
-            int acc = 0;
-
-            for (int j = 0; j < due.Count; j++) {
-                int idx = due[j];
-                acc += Mathf.Max(0, types[idx].weight);
-
-                if (r <= acc)
-                    return idx;
+                // 推进该类型的下次时间（防止 interval=0 导致狂刷）
+                float itv = Mathf.Max(0.01f, type.interval);
+                type.nextTime = now + itv;
             }
-
-            return due[0];
         }
 
         int GetBurstNow(EnemyType type, float now) {
-            int b = Mathf.Max(1, type.burst);
+            int b = Mathf.Max(0, type.burst);
             float growEvery = type.burstGrowEvery;
             int growBy = type.burstGrowBy;
 
@@ -142,8 +128,8 @@ namespace Gameplay.Units {
                 }
             }
 
-            int max = Mathf.Max(1, type.burstMax);
-            b = Mathf.Clamp(b, 1, max);
+            int max = Mathf.Max(0, type.burstMax);
+            b = Mathf.Clamp(b, 0, max);
 
             return b;
         }
@@ -169,12 +155,8 @@ namespace Gameplay.Units {
         }
 
         static Vector2 RandomPointInRing(Vector2 center, float innerR, float outerR) {
-            float r = Mathf.Sqrt(
-                UnityEngine.Random.Range(innerR * innerR, outerR * outerR)
-            );
-
+            float r = Mathf.Sqrt(UnityEngine.Random.Range(innerR * innerR, outerR * outerR));
             float a = UnityEngine.Random.Range(0f, Mathf.PI * 2f);
-
             return center + new Vector2(Mathf.Cos(a), Mathf.Sin(a)) * r;
         }
     }

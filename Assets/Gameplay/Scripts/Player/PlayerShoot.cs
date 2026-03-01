@@ -5,12 +5,22 @@ using Gameplay.Projectiles;
 
 namespace Gameplay.Player {
     public class PlayerShoot : MonoBehaviour {
-        public InputActionReference fire;      // Gameplay/Fire
-        public PoolService pool;               // 拖 Pool
-        public string bulletKey = "Bullet";    // Pool entry key
+        [Header("Input")]
+        public InputActionReference fire;
 
+        [Header("Pooling")]
+        public PoolService pool;
+        public string bulletKey = "Bullet";
+
+        [Header("Fire")]
         public Transform muzzle;
         public float fireInterval = 0.12f;
+
+        [Header("Audio")]
+        public AudioSource shootAudioSource;   // 拖一个AudioSource
+        public AudioClip shootClip;
+        [Range(0.8f, 1.2f)] public float pitchMin = 0.95f;
+        [Range(0.8f, 1.2f)] public float pitchMax = 1.05f;
 
         Camera _cam;
         float _cd;
@@ -44,7 +54,17 @@ namespace Gameplay.Player {
             b.Setup(pool);
             b.Fire(dir);
 
+            PlayShootSound();
+
             _cd = fireInterval;
+        }
+
+        void PlayShootSound() {
+            if (shootAudioSource == null || shootClip == null)
+                return;
+
+            shootAudioSource.pitch = Random.Range(pitchMin, pitchMax);
+            shootAudioSource.PlayOneShot(shootClip);
         }
     }
 }

@@ -4848,7 +4848,6 @@ GameObject:
   - component: {fileID: -4703347880699303876}
   - component: {fileID: 4146404359445142240}
   - component: {fileID: 5862861474786827359}
-  - component: {fileID: 5932879688265763480}
   - component: {fileID: 8216381953270774432}
   - component: {fileID: 3205651164454249212}
   m_Layer: 0
@@ -4954,35 +4953,11 @@ MonoBehaviour:
   hitDisableCooldown: 0.05
   hitReact: {fileID: 883735973750297530}
   hitStopTime: 0.04
-  deathClip: {fileID: 8300000, guid: c2f2c23603390f240a70199316b979cd, type: 3}
-  deathVolume: 1
-  randomDeathPitch: 0
-  deathPitchMin: 1
-  deathPitchMax: 1
---- !u!114 &5932879688265763480
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3166030119217381912}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0eac183f901318844835a1608c2db0b1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DistancePlayAudioByPlayer_OneShot2D_Debug
-  playerTag: Player
-  startClip: {fileID: 8300000, guid: 6bf9e1b67155ce94e9797112f31a5119, type: 3}
-  nearClip: {fileID: 0}
-  farClip: {fileID: 0}
-  volume: 0.01
-  randomPitch: 1
-  pitchMin: 0.95
-  pitchMax: 1.05
-  cooldown: 0.25
-  enableDistance: 1
-  disableDistance: 3.1
-  lockUntilMovementActive: 1
+  deathClip: {fileID: 8300000, guid: 99dda5f591809104bb85e0578fdbf349, type: 3}
+  deathVolume: 0.15
+  randomDeathPitch: 1
+  deathPitchMin: 0.25
+  deathPitchMax: 0.25
 --- !u!114 &8216381953270774432
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5298,9 +5273,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b69ff980b1a88de4e988869e9dfbada5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PolygonGenerator
-  vertexCount: 15
+  vertexCount: 8
   size: 2
-  jitterRange: {x: 0, y: 10}
+  jitterRange: {x: 0, y: 0}
   breatheAmp: 0.08
   breatheSpeed: 1.5
   wobbleAmp: 0.06

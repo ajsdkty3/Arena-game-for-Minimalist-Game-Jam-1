@@ -114,11 +114,7 @@ namespace Gameplay.Units {
 
             var gate = other.GetComponent<PlayerDamageGate>();
             if (gate != null)
-                gate.TakeHit();
-
-            var hp = other.GetComponent<PlayerHealth>();
-            if (hp != null)
-                hp.Die();
+                gate.TakeHit(1);
 
             _hitCd = hitDisableCooldown;
 

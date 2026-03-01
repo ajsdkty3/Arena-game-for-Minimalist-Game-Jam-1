@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using Gameplay.Units.Movement;
 
-public class DistancePlayAudioByPlayer_OneShot2D_Debug : MonoBehaviour {
+public class DistancePlayAudioByPlayer_OneShot2D : MonoBehaviour {
+
     [Header("Player")]
     public string playerTag = "Player";
 
@@ -27,11 +28,6 @@ public class DistancePlayAudioByPlayer_OneShot2D_Debug : MonoBehaviour {
     [Header("Delay Lock (optional)")]
     public bool lockUntilMovementActive = true;
 
-    [Header("Debug")]
-    public bool debugLogs = true;
-    public bool debugEverySecond = false;
-    float _nextDbg;
-
     Transform _player;
     bool _near;
 
@@ -39,59 +35,33 @@ public class DistancePlayAudioByPlayer_OneShot2D_Debug : MonoBehaviour {
 
     void Awake() {
         _delayedMove = GetComponentInParent<DelayedInertiaSeekMovement>();
-        if (debugLogs)
-            Debug.Log($"[EnemySfx] Awake on {name}");
     }
 
     void OnEnable() {
         TryFindPlayer();
-
         _near = false;
         _nextPlayTime = 0f;
-
-        if (debugLogs)
-            Debug.Log($"[EnemySfx] OnEnable {name} playerFound={_player != null} hub={(SfxOneShotHub2D.I != null)}");
-
-        Play(startClip, "START");
+        Play(startClip);
     }
 
     void Update() {
-        if (lockUntilMovementActive && _delayedMove != null && !_delayedMove.IsActive) {
-            if (debugEverySecond && Time.time >= _nextDbg) {
-                _nextDbg = Time.time + 1f;
-                Debug.Log($"[EnemySfx] locked (movement inactive) {name}");
-            }
+        if (lockUntilMovementActive && _delayedMove != null && !_delayedMove.IsActive)
             return;
-        }
 
         if (_player == null) {
             TryFindPlayer();
-            if (_player == null) {
-                if (debugEverySecond && Time.time >= _nextDbg) {
-                    _nextDbg = Time.time + 1f;
-                    Debug.LogWarning($"[EnemySfx] Player not found tag='{playerTag}' {name}");
-                }
+            if (_player == null)
                 return;
-            }
         }
 
         float d = Vector2.Distance(transform.position, _player.position);
 
-        if (debugEverySecond && Time.time >= _nextDbg) {
-            _nextDbg = Time.time + 1f;
-            Debug.Log($"[EnemySfx] d={d:F2} near={_near} {name}");
-        }
-
         if (!_near && d <= enableDistance) {
             _near = true;
-            if (debugLogs)
-                Debug.Log($"[EnemySfx] ENTER near d={d:F2} {name}");
-            Play(nearClip, "NEAR_ENTER");
+            Play(nearClip);
         } else if (_near && d >= disableDistance) {
             _near = false;
-            if (debugLogs)
-                Debug.Log($"[EnemySfx] EXIT near d={d:F2} {name}");
-            Play(farClip, "NEAR_EXIT");
+            Play(farClip);
         }
     }
 
@@ -101,29 +71,19 @@ public class DistancePlayAudioByPlayer_OneShot2D_Debug : MonoBehaviour {
             _player = go.transform;
     }
 
-    void Play(AudioClip clip, string tag) {
-        if (clip == null) {
-            if (debugLogs)
-                Debug.LogWarning($"[EnemySfx] clip NULL tag={tag} {name}");
+    void Play(AudioClip clip) {
+        if (clip == null)
             return;
-        }
 
-        if (Time.time < _nextPlayTime) {
-            if (debugLogs)
-                Debug.Log($"[EnemySfx] cooldown block tag={tag} {name}");
+        if (Time.time < _nextPlayTime)
             return;
-        }
 
-        if (SfxOneShotHub2D.I == null) {
-            Debug.LogError($"[EnemySfx] NO HUB in scene. Add SfxOneShotHub2D. tag={tag} {name}");
+        if (SfxOneShotHub2D.I == null)
             return;
-        }
 
-        float pitch = 1f;
-        if (randomPitch)
-            pitch = Random.Range(pitchMin, pitchMax);
+        float pitch = randomPitch ? Random.Range(pitchMin, pitchMax) : 1f;
 
-        SfxOneShotHub2D.I.Play(clip, volume, pitch, $"{tag}/{name}");
+        SfxOneShotHub2D.I.Play(clip, volume, pitch);
 
         _nextPlayTime = Time.time + cooldown;
     }

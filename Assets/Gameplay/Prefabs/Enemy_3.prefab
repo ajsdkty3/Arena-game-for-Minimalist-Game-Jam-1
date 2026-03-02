@@ -5277,7 +5277,7 @@ MonoBehaviour:
   jitterRange: {x: 0, y: 50}
   breatheAmp: 0.08
   breatheSpeed: 1.5
-  wobbleAmp: 0.06
+  wobbleAmp: 0.307
   wobbleSpeed: 2.5
 --- !u!114 &3559803433096217946
 MonoBehaviour:
@@ -5293,8 +5293,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DistanceEnableParticleByPlayer
   playerTag: Player
   ps: {fileID: 7504718959472725479}
-  enableDistance: 6
-  disableDistance: 6.1
+  enableDistance: 10
+  disableDistance: 10.1
   boostDistance: 1
   sizeMultiplier: 1
   lockUntilMovementActive: 1

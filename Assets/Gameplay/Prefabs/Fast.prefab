@@ -225,8 +225,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbe8fa885c63d04439ee9e83bf03a079, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Gameplay.Units.Movement.InertiaSeekMovement
-  maxSpeed: 2.5
-  acceleration: 3
+  maxSpeed: 4
+  acceleration: 6
   playerTag: Player
   enemyImage: {fileID: 2249685244972548488}
   angleOffsetDeg: 0

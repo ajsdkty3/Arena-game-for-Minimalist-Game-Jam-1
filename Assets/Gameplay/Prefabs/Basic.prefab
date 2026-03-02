@@ -4970,7 +4970,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbe8fa885c63d04439ee9e83bf03a079, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Gameplay.Units.Movement.RandomArenaWanderMovement
-  maxSpeed: 1
+  maxSpeed: 2
   acceleration: 2
   playerTag: Player
   enemyImage: {fileID: 0}

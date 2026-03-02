@@ -4969,7 +4969,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3f7399816d1d4e4cb44810011e8eae4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Gameplay.Units.Movement.InertiaChordMovement
-  maxSpeed: 5
+  maxSpeed: 3
   acceleration: 12
   arenaTag: Arena
   padding: 0.2
@@ -4978,9 +4978,6 @@ MonoBehaviour:
   maxTargetTime: 2.2
   enemyImage: {fileID: 4430526678666534219}
   angleOffsetDeg: 0
-  debugLogs: 1
-  logEveryNFrames: 20
-  drawDebug: 1
 --- !u!1 &3267087403128351279
 GameObject:
   m_ObjectHideFlags: 0

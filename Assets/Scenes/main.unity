@@ -9879,10 +9879,10 @@ MonoBehaviour:
   pool: {fileID: 1644947991}
   bulletKey: Bullet
   muzzle: {fileID: 0}
-  fireInterval: 0.2
+  fireInterval: 0.4
   rampFireRate: 1
-  intervalStepSeconds: 3
-  fireMultiplier: 0.5
+  intervalStepSeconds: 5
+  fireMultiplier: 0.94
   minFireInterval: 0.05
   useUnscaledTime: 0
   shootAudioSource: {fileID: 55842172}

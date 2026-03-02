@@ -204,7 +204,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12bef911fda7d0d4cb0427902c72dcbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Gameplay.Units.Enemy
-  maxHp: 3
+  maxHp: 1
   hitDisableCooldown: 0.05
   hitReact: {fileID: 2473970951379742766}
   hitStopTime: 0.04

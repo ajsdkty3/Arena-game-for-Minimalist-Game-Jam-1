@@ -2566,16 +2566,16 @@ MonoBehaviour:
     startAfter: 10
     interval: 10
     burst: 3
-    burstGrowEvery: 30
-    burstGrowBy: 0
+    burstGrowEvery: 10
+    burstGrowBy: 1
     burstMax: 8
   - name: Enemy_2
     poolKey: Enemy_2
     startAfter: 10
     interval: 10
     burst: 2
-    burstGrowEvery: 30
-    burstGrowBy: 0
+    burstGrowEvery: 10
+    burstGrowBy: 1
     burstMax: 5
   - name: Enemy_3
     poolKey: Enemy_3
@@ -7758,10 +7758,10 @@ MonoBehaviour:
     warmup: 15
   - key: Enemy_2
     prefab: {fileID: 3166030119217381912, guid: 9aaa752a0e220f54f977b2d559fcc6ea, type: 3}
-    warmup: 15
+    warmup: 8
   - key: Enemy_3
     prefab: {fileID: 3166030119217381912, guid: c8911c7f462531a45aaa5b9f9a22ee3c, type: 3}
-    warmup: 9
+    warmup: 6
 --- !u!4 &1644947992
 Transform:
   m_ObjectHideFlags: 0

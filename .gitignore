@@ -19,3 +19,9 @@ MemoryCaptures/
 *.svd
 *.pdb
 *.mdb
+.vs/
+**/.vs/
+*.db
+*.db-shm
+*.db-wal
+*.bin

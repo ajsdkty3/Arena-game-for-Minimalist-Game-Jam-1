@@ -5053,7 +5053,7 @@ MonoBehaviour:
   baseTrack: {fileID: 8300000, guid: 623389fd67117c64d8d04384d8a35c1c, type: 3}
   layerTrack: {fileID: 8300000, guid: 6bf9e1b67155ce94e9797112f31a5119, type: 3}
   baseVolume: 0.8
-  layerVolume: 1
+  layerVolume: 0
   loop: 1
   fadeDuration: 0.5
 --- !u!4 &915660635

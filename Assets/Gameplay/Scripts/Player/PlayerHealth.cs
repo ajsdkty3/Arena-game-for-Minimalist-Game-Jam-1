@@ -61,6 +61,7 @@ namespace Gameplay.Player {
         float _startLightIntensity;
         Color _startShadowColor;
 
+
         void Awake() {
             _hp = maxHp;
 
@@ -111,7 +112,7 @@ namespace Gameplay.Player {
 
             _dying = true;
 
-            // ✅ 关键修正：死亡瞬间读取“当前真实颜色”
+            // ✅ 起始颜色直接固定（Color1=白，Color2=#FFD900）
             CaptureCurrentMaterialColors();
 
             StartCoroutine(DeathRoutine());
@@ -119,26 +120,9 @@ namespace Gameplay.Player {
 
         void CaptureCurrentMaterialColors() {
 
-            if (playerImageRenderer == null || _mpb == null)
-                return;
-
-            playerImageRenderer.GetPropertyBlock(_mpb);
-
-            // 先尝试从 property block 读
-            if (_mpb.isEmpty) {
-                // 如果 block 里没有值，从 sharedMaterial 读
-                var mat = playerImageRenderer.sharedMaterial;
-                if (mat != null) {
-                    if (mat.HasProperty(color1Property))
-                        _startColor1 = mat.GetColor(color1Property);
-
-                    if (mat.HasProperty(color2Property))
-                        _startColor2 = mat.GetColor(color2Property);
-                }
-            } else {
-                _startColor1 = _mpb.GetColor(color1Property);
-                _startColor2 = _mpb.GetColor(color2Property);
-            }
+            // ✅ 关键改动：不再从 MPB/Material 读取，直接用预设起始值
+            _startColor1 = Color.white;
+            _startColor2 = new Color32(255, 217, 0, 255); // FFD900
 
             // capture light
             if (playerLight != null)

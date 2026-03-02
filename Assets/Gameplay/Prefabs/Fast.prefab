@@ -614,7 +614,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.2
+      scalar: 0.25
       minScalar: 0.08
       maxCurve:
         serializedVersion: 2
@@ -10127,8 +10127,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DistanceEnableParticleByPlayer
   playerTag: Player
   ps: {fileID: 5685210131068396971}
-  enableDistance: 4
-  disableDistance: 4.1
+  enableDistance: 10
+  disableDistance: 10.1
   boostDistance: 1
   sizeMultiplier: 1
   lockUntilMovementActive: 1

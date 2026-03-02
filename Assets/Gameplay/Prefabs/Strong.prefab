@@ -5196,8 +5196,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DistanceEnableParticleByPlayer
   playerTag: Player
   ps: {fileID: 7504718959472725479}
-  enableDistance: 6
-  disableDistance: 6.1
+  enableDistance: 7
+  disableDistance: 7.1
   boostDistance: 1.5
   sizeMultiplier: 2
   lockUntilMovementActive: 1

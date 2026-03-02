@@ -4971,7 +4971,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Gameplay.Units.Movement.RandomArenaWanderMovement
   maxSpeed: 2
-  acceleration: 2
+  acceleration: 4
   playerTag: Player
   enemyImage: {fileID: 0}
   angleOffsetDeg: 0

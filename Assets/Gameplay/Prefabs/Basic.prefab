@@ -5274,7 +5274,7 @@ MonoBehaviour:
   jitterRange: {x: 0, y: 3}
   breatheAmp: 0.08
   breatheSpeed: 1.5
-  wobbleAmp: 0.06
+  wobbleAmp: 0.5
   wobbleSpeed: 2.5
 --- !u!114 &3559803433096217946
 MonoBehaviour:

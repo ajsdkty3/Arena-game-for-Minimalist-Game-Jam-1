@@ -4952,6 +4952,11 @@ MonoBehaviour:
   hitDisableCooldown: 0.05
   hitReact: {fileID: 883735973750297530}
   hitStopTime: 0.04
+  deathClip: {fileID: 0}
+  deathVolume: 1
+  randomDeathPitch: 1
+  deathPitchMin: 0.9
+  deathPitchMax: 1.1
 --- !u!114 &8303297555356202863
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5168,9 +5173,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b69ff980b1a88de4e988869e9dfbada5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PolygonGenerator
-  vertexCount: 7
-  size: 2.5
-  jitterRange: {x: 0, y: 0}
+  vertexCount: 15
+  size: 2.7
+  jitterRange: {x: 0, y: 4}
   breatheAmp: 0.08
   breatheSpeed: 1.5
   wobbleAmp: 0.06
@@ -5191,6 +5196,8 @@ MonoBehaviour:
   ps: {fileID: 7504718959472725479}
   enableDistance: 6
   disableDistance: 6.1
+  boostDistance: 1.5
+  sizeMultiplier: 2
   lockUntilMovementActive: 1
 --- !u!114 &883735973750297530
 MonoBehaviour:

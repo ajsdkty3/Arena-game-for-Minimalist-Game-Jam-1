@@ -4851,7 +4851,7 @@ GameObject:
   - component: {fileID: 8216381953270774432}
   - component: {fileID: 3205651164454249212}
   m_Layer: 0
-  m_Name: Enemy_2
+  m_Name: Basic
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4949,7 +4949,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12bef911fda7d0d4cb0427902c72dcbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Gameplay.Units.Enemy
-  maxHp: 10
+  maxHp: 5
   hitDisableCooldown: 0.05
   hitReact: {fileID: 883735973750297530}
   hitStopTime: 0.04
@@ -4967,17 +4967,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 3166030119217381912}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f2d3e697d15abb74787cc63df4705c4d, type: 3}
+  m_Script: {fileID: 11500000, guid: bbe8fa885c63d04439ee9e83bf03a079, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Gameplay.Units.Movement.RandomArenaWanderMovement
-  arena: {fileID: 0}
-  arenaTag: Arena
-  padding: 0.2
-  maxSpeed: 2
+  maxSpeed: 1
   acceleration: 2
-  changeDirIntervalMin: 1
-  changeDirIntervalMax: 1
-  enemyImage: {fileID: 4430526678666534219}
+  playerTag: Player
+  enemyImage: {fileID: 0}
   angleOffsetDeg: 0
 --- !u!82 &3205651164454249212
 AudioSource:
@@ -5273,9 +5269,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b69ff980b1a88de4e988869e9dfbada5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PolygonGenerator
-  vertexCount: 8
+  vertexCount: 5
   size: 2
-  jitterRange: {x: 0, y: 0}
+  jitterRange: {x: 0, y: 3}
   breatheAmp: 0.08
   breatheSpeed: 1.5
   wobbleAmp: 0.06

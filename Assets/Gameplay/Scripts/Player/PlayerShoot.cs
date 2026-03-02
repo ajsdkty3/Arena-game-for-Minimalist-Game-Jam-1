@@ -14,7 +14,7 @@ namespace Gameplay.Player {
 
         [Header("Fire")]
         public Transform muzzle;
-        public float fireInterval = 0.12f;
+        public float fireInterval = 0.25f;
 
         [Header("Audio")]
         public AudioSource shootAudioSource;   // 拖一个AudioSource

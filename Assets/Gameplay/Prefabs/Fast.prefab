@@ -104,8 +104,9 @@ GameObject:
   - component: {fileID: 1716231547985488430}
   - component: {fileID: 5487851163038605852}
   - component: {fileID: 8076192849594241677}
+  - component: {fileID: 4937209047904818198}
   m_Layer: 0
-  m_Name: Fast
+  m_Name: Enemy_1
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -203,10 +204,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12bef911fda7d0d4cb0427902c72dcbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Gameplay.Units.Enemy
-  maxHp: 1
+  maxHp: 3
   hitDisableCooldown: 0.05
   hitReact: {fileID: 2473970951379742766}
   hitStopTime: 0.04
+  deathClip: {fileID: 8300000, guid: 99dda5f591809104bb85e0578fdbf349, type: 3}
+  deathVolume: 0.15
+  randomDeathPitch: 1
+  deathPitchMin: 0.35
+  deathPitchMax: 0.35
 --- !u!114 &8076192849594241677
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -219,11 +225,108 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbe8fa885c63d04439ee9e83bf03a079, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Gameplay.Units.Movement.InertiaSeekMovement
-  maxSpeed: 2.5
-  acceleration: 4
+  maxSpeed: 1
+  acceleration: 2
   playerTag: Player
   enemyImage: {fileID: 2249685244972548488}
   angleOffsetDeg: 0
+--- !u!82 &4937209047904818198
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1361199330958022037}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &3938487635157812389
 GameObject:
   m_ObjectHideFlags: 0
@@ -10026,6 +10129,8 @@ MonoBehaviour:
   ps: {fileID: 5685210131068396971}
   enableDistance: 4
   disableDistance: 4.1
+  boostDistance: 1
+  sizeMultiplier: 1
   lockUntilMovementActive: 1
 --- !u!114 &2473970951379742766
 MonoBehaviour:

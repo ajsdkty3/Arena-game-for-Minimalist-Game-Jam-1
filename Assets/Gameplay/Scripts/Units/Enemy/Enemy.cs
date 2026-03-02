@@ -62,11 +62,13 @@ namespace Gameplay.Units {
             _hitStop = hitStopTime;
 
             if (_hp <= 0)
-                Die();
+                Die(true);   // ✅ 被打死 → 播音效
         }
 
-        void Die() {
-            PlayDeathAudio();
+        void Die(bool playAudio) {
+            if (playAudio)
+                PlayDeathAudio();
+
             DespawnOrDisable();
         }
 
@@ -114,15 +116,11 @@ namespace Gameplay.Units {
 
             var gate = other.GetComponent<PlayerDamageGate>();
             if (gate != null)
-                gate.TakeHit();
-
-            var hp = other.GetComponent<PlayerHealth>();
-            if (hp != null)
-                hp.Die();
+                gate.TakeHit(1);
 
             _hitCd = hitDisableCooldown;
 
-            Die(); // ✅ 撞到玩家也播死亡音效
+            Die(false);   // ✅ 撞死 → 不播音效
         }
 
         void DespawnOrDisable() {

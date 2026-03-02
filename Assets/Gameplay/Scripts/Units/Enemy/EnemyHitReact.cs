@@ -85,6 +85,10 @@ namespace Gameplay.VFX {
         /// Call this when enemy takes damage.
         /// </summary>
         public void Play() {
+            // 关键：inactive/disabled 时不能 StartCoroutine
+            if (!isActiveAndEnabled)
+                return;
+
             if (_flashCo != null)
                 StopCoroutine(_flashCo);
             if (_squashCo != null)

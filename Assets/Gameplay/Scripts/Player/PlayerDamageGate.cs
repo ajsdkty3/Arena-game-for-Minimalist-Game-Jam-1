@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using Gameplay.Player;
 using Gameplay.VFX;
 
 namespace Gameplay.Player {
@@ -9,51 +8,19 @@ namespace Gameplay.Player {
         public PlayerHealth playerHealth;
         public HolyLightFX holyLightFX;
 
-        [Header("Before light dies")]
-        public bool preventDeathBeforeLightDies = true;
-
         void Awake() {
             if (playerHealth == null)
                 playerHealth = GetComponent<PlayerHealth>();
-
-            ApplyGate();
         }
 
-        void OnEnable() {
+        // ✅ Enemy 碰到玩家时调用这个
+        public void TakeHit(int damage) {
+            // holy light 只是反馈，不决定生死
             if (holyLightFX != null)
-                holyLightFX.OnDead += HandleLightDead;
-
-            ApplyGate();
-        }
-
-        void OnDisable() {
-            if (holyLightFX != null)
-                holyLightFX.OnDead -= HandleLightDead;
-        }
-
-        // ✅ 你在“玩家被打/碰到敌人”那里调用这个
-        public void TakeHit() {
-            if (holyLightFX != null && !holyLightFX.IsDead)
                 holyLightFX.PlayHitFX();
 
-            ApplyGate();
-        }
-
-        void HandleLightDead() {
-            ApplyGate(); // light dead -> allow death
-        }
-
-        void ApplyGate() {
-            if (playerHealth == null)
-                return;
-
-            if (!preventDeathBeforeLightDies) {
-                playerHealth.allowDeath = true;
-                return;
-            }
-
-            bool lightDead = (holyLightFX != null && holyLightFX.IsDead);
-            playerHealth.allowDeath = lightDead;
+            if (playerHealth != null)
+                playerHealth.TakeDamage(damage);
         }
     }
 }

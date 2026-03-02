@@ -4848,9 +4848,10 @@ GameObject:
   - component: {fileID: -4703347880699303876}
   - component: {fileID: 4146404359445142240}
   - component: {fileID: 5862861474786827359}
-  - component: {fileID: -11571033827702089}
+  - component: {fileID: 8216381953270774432}
+  - component: {fileID: 3205651164454249212}
   m_Layer: 0
-  m_Name: Basic
+  m_Name: Enemy_2
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4948,11 +4949,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12bef911fda7d0d4cb0427902c72dcbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Gameplay.Units.Enemy
-  maxHp: 5
+  maxHp: 10
   hitDisableCooldown: 0.05
   hitReact: {fileID: 883735973750297530}
   hitStopTime: 0.04
---- !u!114 &-11571033827702089
+  deathClip: {fileID: 8300000, guid: 99dda5f591809104bb85e0578fdbf349, type: 3}
+  deathVolume: 0.15
+  randomDeathPitch: 1
+  deathPitchMin: 0.25
+  deathPitchMax: 0.25
+--- !u!114 &8216381953270774432
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4961,19 +4967,115 @@ MonoBehaviour:
   m_GameObject: {fileID: 3166030119217381912}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d298c82935e7d94a9783e9015c40a91, type: 3}
+  m_Script: {fileID: 11500000, guid: f2d3e697d15abb74787cc63df4705c4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Gameplay.Units.Movement.RandomArenaWanderMovement
-  padding: 0.4
-  playerTag: Player
-  maxSpeed: 1
+  arena: {fileID: 0}
+  arenaTag: Arena
+  padding: 0.2
+  maxSpeed: 2
   acceleration: 2
-  changeDirMin: 1.5
-  changeDirMax: 2
-  returnSpeedMultiplier: 1
-  returnAccelMultiplier: 1
+  changeDirIntervalMin: 1
+  changeDirIntervalMax: 1
   enemyImage: {fileID: 4430526678666534219}
   angleOffsetDeg: 0
+--- !u!82 &3205651164454249212
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3166030119217381912}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &3267087403128351279
 GameObject:
   m_ObjectHideFlags: 0
@@ -5171,7 +5273,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b69ff980b1a88de4e988869e9dfbada5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PolygonGenerator
-  vertexCount: 5
+  vertexCount: 8
   size: 2
   jitterRange: {x: 0, y: 0}
   breatheAmp: 0.08
@@ -5194,6 +5296,8 @@ MonoBehaviour:
   ps: {fileID: 7504718959472725479}
   enableDistance: 6
   disableDistance: 6.1
+  boostDistance: 1
+  sizeMultiplier: 1
   lockUntilMovementActive: 1
 --- !u!114 &883735973750297530
 MonoBehaviour:

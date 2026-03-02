@@ -6,7 +6,8 @@ using UnityEngine;
 
 namespace Gameplay.Units {
     public class Enemy : MonoBehaviour, IDamageable, IPoolable {
-        Transform _target;          // ✅ always player
+
+        Transform _target;
         IEnemyMovement _movement;
         PoolService _pool;
 
@@ -23,9 +24,16 @@ namespace Gameplay.Units {
         public EnemyHitReact hitReact;
 
         [Header("Hit Stop")]
-        [Tooltip("Only stops this enemy's movement tick, not global time.")]
         public float hitStopTime = 0.04f;
         float _hitStop;
+
+        // ✅ 新增：死亡音效
+        [Header("Audio")]
+        public AudioClip deathClip;
+        [Range(0f, 1f)] public float deathVolume = 1f;
+        public bool randomDeathPitch = true;
+        public float deathPitchMin = 0.9f;
+        public float deathPitchMax = 1.1f;
 
         void Awake() {
             _movement = GetComponent<IEnemyMovement>();
@@ -36,7 +44,6 @@ namespace Gameplay.Units {
 
         public void Setup(PoolService pool) => _pool = pool;
 
-        // ✅ spawner/pool call this with the player transform
         public void Init(Transform target) {
             _target = target;
             _hp = maxHp;
@@ -55,7 +62,26 @@ namespace Gameplay.Units {
             _hitStop = hitStopTime;
 
             if (_hp <= 0)
-                DespawnOrDisable();
+                Die();
+        }
+
+        void Die() {
+            PlayDeathAudio();
+            DespawnOrDisable();
+        }
+
+        void PlayDeathAudio() {
+            if (deathClip == null)
+                return;
+
+            if (SfxOneShotHub2D.I == null)
+                return;
+
+            float pitch = 1f;
+            if (randomDeathPitch)
+                pitch = Random.Range(deathPitchMin, deathPitchMax);
+
+            SfxOneShotHub2D.I.Play(deathClip, deathVolume, pitch, $"DEATH/{name}");
         }
 
         public void OnSpawn() { }
@@ -96,8 +122,7 @@ namespace Gameplay.Units {
 
             _hitCd = hitDisableCooldown;
 
-            // ✅ 撞到玩家后自己消失
-            DespawnOrDisable();
+            Die(); // ✅ 撞到玩家也播死亡音效
         }
 
         void DespawnOrDisable() {

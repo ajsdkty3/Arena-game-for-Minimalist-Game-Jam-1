@@ -4848,7 +4848,7 @@ GameObject:
   - component: {fileID: -4703347880699303876}
   - component: {fileID: 4146404359445142240}
   - component: {fileID: 5862861474786827359}
-  - component: {fileID: 8303297555356202863}
+  - component: {fileID: 8684519644235370115}
   m_Layer: 0
   m_Name: Strong
   m_TagString: Enemy
@@ -4957,7 +4957,7 @@ MonoBehaviour:
   randomDeathPitch: 1
   deathPitchMin: 0.9
   deathPitchMax: 1.1
---- !u!114 &8303297555356202863
+--- !u!114 &8684519644235370115
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4966,16 +4966,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 3166030119217381912}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a20474210039b8a409d71380e4fbd158, type: 3}
+  m_Script: {fileID: 11500000, guid: e3f7399816d1d4e4cb44810011e8eae4, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Gameplay.Units.Movement.DelayedInertiaSeekMovement
-  playerTag: Player
-  startDelayMin: 3
-  startDelayMax: 5
-  maxSpeed: 0.6
-  acceleration: 2
+  m_EditorClassIdentifier: Assembly-CSharp::Gameplay.Units.Movement.InertiaChordMovement
+  maxSpeed: 5
+  acceleration: 12
+  arenaTag: Arena
+  padding: 0.2
+  enterMargin: 0.05
+  reachDistance: 0.05
+  maxTargetTime: 2.2
   enemyImage: {fileID: 4430526678666534219}
   angleOffsetDeg: 0
+  debugLogs: 1
+  logEveryNFrames: 20
+  drawDebug: 1
 --- !u!1 &3267087403128351279
 GameObject:
   m_ObjectHideFlags: 0

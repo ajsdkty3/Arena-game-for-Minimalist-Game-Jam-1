@@ -2534,7 +2534,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::_Project.Arena.ArenaController
   center: {x: 0, y: 0}
-  size: {x: 8, y: 8}
+  radius: 8
 --- !u!1 &647787120
 GameObject:
   m_ObjectHideFlags: 0
@@ -3326,20 +3326,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Gameplay.Player.PlayerController
   arena: {fileID: 644953612}
   move: {fileID: -1680190386980627800, guid: 052faaac586de48259a63d0c4782560b, type: 3}
-  jump: {fileID: -2099379676528639254, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   moveSpeed: 3
-  accel: 60
-  decel: 80
-  jumpSpeed: 6.3
-  coyoteTime: 0.08
-  jumpBuffer: 0.1
-  groundMask:
-    serializedVersion: 2
-    m_Bits: 8
-  groundBoxSize: {x: 0.6, y: 0.15}
-  groundBoxDistance: 0.08
-  ignoreGroundAfterJump: 0.06
-  groundedMaxUpVel: 0.05
   clampPadding: 0.15
 --- !u!50 &793331817
 Rigidbody2D:
@@ -3421,6 +3408,15 @@ MonoBehaviour:
   bulletKey: Bullet
   muzzle: {fileID: 0}
   fireInterval: 0.05
+  rampFireRate: 1
+  intervalStepSeconds: 10
+  fireMultiplier: 0.9
+  minFireInterval: 0.08
+  useUnscaledTime: 0
+  shootAudioSource: {fileID: 0}
+  shootClip: {fileID: 0}
+  pitchMin: 0.95
+  pitchMax: 1.05
 --- !u!114 &793331820
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3433,7 +3429,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93a45be244632174aa37ce4b141195e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Gameplay.Player.PlayerHealth
-  timer: {fileID: 1371052388}
+  maxHp: 5
+  allowDeath: 1
+  hitAudioSource: {fileID: 0}
+  hitClips: []
+  hitVolume: 1
+  hitSoundCooldown: 0.05
+  deathAudioSource: {fileID: 0}
+  deathClip: {fileID: 0}
+  deathVolume: 1
+  muteAllOtherAudioOnDeath: 1
+  playerImageRenderer: {fileID: 0}
+  color1Property: _Color_1
+  color2Property: _Color_2
+  targetColor1: {r: 0.3647059, g: 0, b: 0, a: 1}
+  targetColor2: {r: 0, g: 0, b: 0, a: 1}
+  playerLight: {fileID: 0}
+  playerShadow: {fileID: 0}
 --- !u!1 &795943420
 GameObject:
   m_ObjectHideFlags: 0
@@ -6051,7 +6063,6 @@ MonoBehaviour:
     burstGrowEvery: 30
     burstGrowBy: 1
     burstMax: 8
-    weight: 1
   - name: Enemy_2
     poolKey: Enemy_2
     startAfter: 1
@@ -6060,18 +6071,9 @@ MonoBehaviour:
     burstGrowEvery: 30
     burstGrowBy: 1
     burstMax: 5
-    weight: 1
   maxAliveTotal: 60
   minOffset: 1
   maxOffset: 1
-  minY: -2
-  liftIfBelow: 6
-  maxSpawnY: 4
-  maxTries: 20
-  blockMask:
-    serializedVersion: 2
-    m_Bits: 0
-  clearanceRadius: 0.35
 --- !u!1 &1529250675
 GameObject:
   m_ObjectHideFlags: 0

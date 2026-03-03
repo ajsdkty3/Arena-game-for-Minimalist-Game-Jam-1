@@ -8055,10 +8055,10 @@ MonoBehaviour:
     prefab: {fileID: 1839681505625045738, guid: 9f57dcbd57cfcdf4c8094a0d9024c6bf, type: 3}
     warmup: 60
   - key: Enemy_1
-    prefab: {fileID: 1361199330958022037, guid: d3eb9753908fb1549a972bba17dce008, type: 3}
+    prefab: {fileID: 1361199330958022037, guid: a5d7173de28cb8848a4a14cf9989ed50, type: 3}
     warmup: 15
   - key: Enemy_2
-    prefab: {fileID: 3166030119217381912, guid: 9aaa752a0e220f54f977b2d559fcc6ea, type: 3}
+    prefab: {fileID: 3166030119217381912, guid: d8ce8ef3ee8acb443a164a7658de0f12, type: 3}
     warmup: 8
   - key: Enemy_3
     prefab: {fileID: 3166030119217381912, guid: c8911c7f462531a45aaa5b9f9a22ee3c, type: 3}
@@ -10173,6 +10173,11 @@ MonoBehaviour:
   bulletKey: Bullet
   muzzle: {fileID: 0}
   fireInterval: 0.1
+  rampFireRate: 1
+  intervalStepSeconds: 10
+  fireMultiplier: 0.9
+  minFireInterval: 0.08
+  useUnscaledTime: 0
   shootAudioSource: {fileID: 55842172}
   shootClip: {fileID: 8300000, guid: b6e7853c119b44747bd761e7a32a7d36, type: 3}
   pitchMin: 0.8

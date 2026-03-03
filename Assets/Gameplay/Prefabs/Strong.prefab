@@ -287,7 +287,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.3
+      scalar: 0.5
       minScalar: 0.08
       maxCurve:
         serializedVersion: 2
@@ -4957,6 +4957,11 @@ MonoBehaviour:
   randomDeathPitch: 1
   deathPitchMin: 0.9
   deathPitchMax: 1.1
+  deathFadeDuration: 0.5
+  collidersToDisable: []
+  particlesToStop: []
+  trailsToClear: []
+  enemyImageRenderer: {fileID: 0}
 --- !u!114 &8684519644235370115
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5196,8 +5201,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DistanceEnableParticleByPlayer
   playerTag: Player
   ps: {fileID: 7504718959472725479}
-  enableDistance: 7
-  disableDistance: 7.1
+  enableDistance: 10
+  disableDistance: 10.1
   boostDistance: 1.5
   sizeMultiplier: 2
   lockUntilMovementActive: 1

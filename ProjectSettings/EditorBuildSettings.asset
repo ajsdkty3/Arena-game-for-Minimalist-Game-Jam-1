@@ -17,6 +17,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/main.unity
     guid: 03d5d68051ef32147b0777766538841a
+  - enabled: 1
+    path: Assets/Scenes/Intro 1.unity
+    guid: 597aac9e30da6314887416e4fd0a3337
+  - enabled: 1
+    path: Assets/Scenes/Rogue.unity
+    guid: a247bd75eae06f742aec267068974d87
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0

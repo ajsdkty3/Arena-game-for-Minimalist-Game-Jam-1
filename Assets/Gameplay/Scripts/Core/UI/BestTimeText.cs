@@ -5,6 +5,7 @@ using Gameplay.Core;
 namespace Gameplay.UI {
     [RequireComponent(typeof(TMP_Text))]
     public class BestTimeText : MonoBehaviour {
+
         TMP_Text _text;
 
         void Awake() {
@@ -12,8 +13,7 @@ namespace Gameplay.UI {
         }
 
         void OnEnable() {
-            float best = SurvivalTimer.BestSeconds();
-            _text.text = $"Longest Survival: {best:F4}";
+            _text.text = $"{BestTimeManager.BestTime:F4}";
         }
     }
 }

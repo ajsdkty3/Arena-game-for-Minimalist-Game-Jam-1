@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Gameplay.Core;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -134,7 +135,7 @@ namespace Gameplay.Player {
         }
 
         IEnumerator DeathRoutine() {
-
+            FindObjectOfType<BestTimeManager>().StopAndCheckRecord();
             CameraShake2D.I?.Shake(0.2f, 0.35f);
 
             Time.timeScale = 0f;

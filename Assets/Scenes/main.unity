@@ -2711,18 +2711,6 @@ MonoBehaviour:
   pool: {fileID: 1644947991}
   runtimeParent: {fileID: 1625290431}
   types:
-<<<<<<< HEAD
-  - name: Fast
-    poolKey: Fast
-    startAfter: 10
-    interval: 10
-    burst: 2
-    burstGrowEvery: 30
-    burstGrowBy: 2
-    burstMax: 8
-  - name: Basic
-    poolKey: Basic
-=======
   - name: Enemy_1
     poolKey: Enemy_1
     startAfter: 10
@@ -2741,19 +2729,10 @@ MonoBehaviour:
     burstMax: 5
   - name: Enemy_3
     poolKey: Enemy_3
->>>>>>> cloud
     startAfter: 10
     interval: 10
     burst: 1
-    burstGrowEvery: 30
-    burstGrowBy: 1
-    burstMax: 5
-  - name: Strong
-    poolKey: Strong
-    startAfter: 10
-    interval: 10
-    burst: 0
-    burstGrowEvery: 50
+    burstGrowEvery: 10
     burstGrowBy: 1
     burstMax: 3
   maxAliveTotal: 60
@@ -3540,7 +3519,7 @@ GameObject:
   - component: {fileID: 644953612}
   m_Layer: 0
   m_Name: Arena
-  m_TagString: Arena
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7568,26 +7547,18 @@ MonoBehaviour:
   pool: {fileID: 1644947991}
   runtimeParent: {fileID: 1625290431}
   types:
-  - name: Fast
-    poolKey: Fast
+  - name: Enemy_1
+    poolKey: Enemy_1
     startAfter: 2
     interval: 5
     burst: 1
     burstGrowEvery: 30
     burstGrowBy: 0
     burstMax: 8
-  - name: Basic
-    poolKey: Basic
+  - name: Enemy_2
+    poolKey: Enemy_2
     startAfter: 1
-    interval: 10
-    burst: 1
-    burstGrowEvery: 30
-    burstGrowBy: 0
-    burstMax: 5
-  - name: Strong
-    poolKey: Strong
-    startAfter: 1
-    interval: 20
+    interval: 7
     burst: 1
     burstGrowEvery: 30
     burstGrowBy: 0
@@ -8083,24 +8054,15 @@ MonoBehaviour:
   - key: Bullet
     prefab: {fileID: 1839681505625045738, guid: 9f57dcbd57cfcdf4c8094a0d9024c6bf, type: 3}
     warmup: 60
-  - key: Fast
+  - key: Enemy_1
     prefab: {fileID: 1361199330958022037, guid: d3eb9753908fb1549a972bba17dce008, type: 3}
     warmup: 15
-<<<<<<< HEAD
-  - key: Basic
-    prefab: {fileID: 3166030119217381912, guid: ec343e4d29acae14687db8d5ce38459f, type: 3}
-    warmup: 15
-  - key: Strong
-    prefab: {fileID: 3166030119217381912, guid: 7cc120c20b110bb4aa8dde085166f71a, type: 3}
-    warmup: 15
-=======
   - key: Enemy_2
     prefab: {fileID: 3166030119217381912, guid: 9aaa752a0e220f54f977b2d559fcc6ea, type: 3}
     warmup: 8
   - key: Enemy_3
     prefab: {fileID: 3166030119217381912, guid: c8911c7f462531a45aaa5b9f9a22ee3c, type: 3}
     warmup: 6
->>>>>>> cloud
 --- !u!4 &1644947992
 Transform:
   m_ObjectHideFlags: 0
@@ -10210,12 +10172,7 @@ MonoBehaviour:
   pool: {fileID: 1644947991}
   bulletKey: Bullet
   muzzle: {fileID: 0}
-  fireInterval: 0.4
-  rampFireRate: 1
-  intervalStepSeconds: 5
-  fireMultiplier: 0.94
-  minFireInterval: 0.05
-  useUnscaledTime: 0
+  fireInterval: 0.1
   shootAudioSource: {fileID: 55842172}
   shootClip: {fileID: 8300000, guid: b6e7853c119b44747bd761e7a32a7d36, type: 3}
   pitchMin: 0.8

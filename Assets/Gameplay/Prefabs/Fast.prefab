@@ -614,11 +614,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-<<<<<<< HEAD:Assets/Gameplay/Prefabs/Fast.prefab
       scalar: 0.25
-=======
-      scalar: 0.2
->>>>>>> cloud:Assets/Gameplay/Prefabs/Enemy_1.prefab
       minScalar: 0.08
       maxCurve:
         serializedVersion: 2
@@ -10115,7 +10111,7 @@ MonoBehaviour:
   jitterRange: {x: 0, y: 0}
   breatheAmp: 0.15
   breatheSpeed: 15
-  wobbleAmp: 0.314
+  wobbleAmp: 0.15
   wobbleSpeed: 10
 --- !u!114 &6367823338753095710
 MonoBehaviour:
@@ -10131,13 +10127,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DistanceEnableParticleByPlayer
   playerTag: Player
   ps: {fileID: 5685210131068396971}
-<<<<<<< HEAD:Assets/Gameplay/Prefabs/Fast.prefab
   enableDistance: 10
   disableDistance: 10.1
-=======
-  enableDistance: 6
-  disableDistance: 6.1
->>>>>>> cloud:Assets/Gameplay/Prefabs/Enemy_1.prefab
   boostDistance: 1
   sizeMultiplier: 1
   lockUntilMovementActive: 1

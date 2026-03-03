@@ -10174,6 +10174,11 @@ MonoBehaviour:
   bulletKey: Bullet
   muzzle: {fileID: 0}
   fireInterval: 0.1
+  rampFireRate: 0
+  intervalStepSeconds: 10
+  fireMultiplier: 0.9
+  minFireInterval: 0.08
+  useUnscaledTime: 0
   shootAudioSource: {fileID: 55842172}
   shootClip: {fileID: 8300000, guid: b6e7853c119b44747bd761e7a32a7d36, type: 3}
   pitchMin: 0.8

@@ -2,53 +2,62 @@
 using Gameplay.Arena;
 
 namespace Gameplay.Units.Movement {
-
     public class RandomArenaWanderMovement : MonoBehaviour, IEnemyMovement {
 
-        [Header("Arena")]
-        public float padding = 0.5f;
-
-        [Header("Player")]
-        public string playerTag = "Player";
+        [Header("Arena (auto)")]
+        public ArenaController arena;
+        public string arenaTag = "Arena";
+        public float padding = 0.2f;
 
         [Header("Move")]
         public float maxSpeed = 3f;
         public float acceleration = 8f;
+        public float changeDirIntervalMin = 1f;
+        public float changeDirIntervalMax = 2.5f;
 
-        [Header("Direction Change")]
-        public float changeDirMin = 0.8f;
-        public float changeDirMax = 1.5f;
-
-        [Header("Return")]
-        public float returnSpeedMultiplier = 1.3f;
-        public float returnAccelMultiplier = 1.8f;
-
-        [Header("Visual Rotation (optional)")]
-        public Transform enemyImage;     // ✅ 只转这个
+        [Header("Visual Rotation")]
+        public Transform enemyImage;
         public float angleOffsetDeg = 0f;
 
+        enum Mode { MoveIn, Wander }
+        Mode _mode;
+
         Vector2 _vel;
-        Vector2 _dir;
-
-        float _changeTimer;
-        float _changeDelay;
-
-        Transform _player;
-        ArenaController arena;
+        Vector2 _targetDir;
+        float _dirTimer, _dirDuration;
 
         Quaternion _imageBaseLocalRot;
         bool _cached;
 
+        public bool IsActive => _mode == Mode.Wander;
+
         void Awake() {
-            arena = Object.FindFirstObjectByType<ArenaController>();
             CacheBaseRot();
-            FindPlayer();
-            PickNewDirection();
+            ResolveArena();
+            ResetState();
+        }
+
+        void OnEnable() {
+            ResolveArena();
         }
 
         void OnValidate() {
             if (!Application.isPlaying)
                 CacheBaseRot();
+        }
+
+        void ResolveArena() {
+            if (arena != null)
+                return;
+
+            if (!string.IsNullOrEmpty(arenaTag)) {
+                var go = GameObject.FindGameObjectWithTag(arenaTag);
+                if (go != null)
+                    arena = go.GetComponent<ArenaController>();
+            }
+
+            if (arena == null)
+                arena = Object.FindFirstObjectByType<ArenaController>();
         }
 
         void CacheBaseRot() {
@@ -59,10 +68,8 @@ namespace Gameplay.Units.Movement {
         }
 
         public void ResetState() {
-            if (arena == null)
-                arena = Object.FindFirstObjectByType<ArenaController>();
-
             _vel = Vector2.zero;
+            _mode = Mode.MoveIn;
             PickNewDirection();
 
             if (!_cached)
@@ -71,77 +78,86 @@ namespace Gameplay.Units.Movement {
                 enemyImage.localRotation = _imageBaseLocalRot;
         }
 
-        void FindPlayer() {
-            var go = GameObject.FindGameObjectWithTag(playerTag);
-            _player = go != null ? go.transform : null;
-        }
-
         void PickNewDirection() {
-            _dir = Random.insideUnitCircle;
-            if (_dir.sqrMagnitude < 0.0001f)
-                _dir = Vector2.right;
-            _dir.Normalize();
-
-            _changeTimer = 0f;
-            _changeDelay = Random.Range(changeDirMin, changeDirMax);
+            _targetDir = Random.insideUnitCircle.normalized;
+            _dirDuration = Random.Range(changeDirIntervalMin, changeDirIntervalMax);
+            _dirTimer = 0f;
         }
 
-        bool IsOutside(Vector2 pos) {
-            if (arena == null)
-                return false;
-
+        bool IsInsideArena(Vector2 pos) {
+            var v = pos - arena.center;
             float maxR = Mathf.Max(0f, arena.radius - padding);
-            Vector2 v = pos - arena.center;
-            return v.sqrMagnitude > maxR * maxR;
+            return v.sqrMagnitude <= maxR * maxR;
+        }
+
+        Vector2 DirectionToEnter(Vector2 pos) {
+            Vector2 clamped = arena.ClampInside(pos, padding);
+            Vector2 to = clamped - pos;
+
+            if (to.sqrMagnitude < 0.0001f) {
+                to = arena.center - pos;
+                if (to.sqrMagnitude < 0.0001f)
+                    return Vector2.zero;
+            }
+
+            return to.normalized;
         }
 
         public void Tick(Transform self, Transform unused, float dt) {
-
-            if (_player == null)
-                FindPlayer();
+            if (arena == null) {
+                ResolveArena();
+                if (arena == null)
+                    return;
+            }
 
             Vector2 pos = self.position;
 
-            // 🔄 只转 image 朝向 player
-            if (_player != null && enemyImage != null) {
-                if (!_cached)
-                    CacheBaseRot();
+            // 外面：进场
+            if (_mode == Mode.MoveIn) {
+                if (IsInsideArena(pos)) {
+                    _mode = Mode.Wander;
+                    PickNewDirection();
+                    // 不 return：这一帧继续往下执行 wander，避免“卡一下”
+                } else {
+                    Vector2 dirIn = DirectionToEnter(pos);
+                    if (dirIn == Vector2.zero)
+                        return;
 
-                Vector2 toPlayer = (Vector2)(_player.position - self.position);
-                if (toPlayer.sqrMagnitude > 0.0001f) {
-                    float ang = Mathf.Atan2(toPlayer.y, toPlayer.x) * Mathf.Rad2Deg + angleOffsetDeg;
-                    Quaternion add = Quaternion.Euler(0f, 0f, ang);
-                    enemyImage.localRotation = _imageBaseLocalRot * add;
+                    Vector2 desiredIn = dirIn * maxSpeed;
+                    _vel = Vector2.MoveTowards(_vel, desiredIn, acceleration * dt);
+
+                    self.position = pos + _vel * dt;
+                    RotateByVelocity();
+                    return;
                 }
             }
 
-            bool outside = arena != null && IsOutside(pos);
+            // 里面：随机游荡
+            _dirTimer += dt;
+            if (_dirTimer >= _dirDuration)
+                PickNewDirection();
 
-            Vector2 desiredDir;
-            if (outside) {
-                desiredDir = ((Vector2)arena.center - pos).normalized;
-            } else {
-                _changeTimer += dt;
-                if (_changeTimer >= _changeDelay)
-                    PickNewDirection();
-                desiredDir = _dir;
-            }
+            Vector2 desired = _targetDir * maxSpeed;
+            _vel = Vector2.MoveTowards(_vel, desired, acceleration * dt);
 
-            if (desiredDir.sqrMagnitude < 0.0001f)
+            Vector2 nextPos = (Vector2)self.position + _vel * dt;
+            nextPos = arena.ClampInside(nextPos, padding);
+            self.position = nextPos;
+
+            RotateByVelocity();
+        }
+
+        void RotateByVelocity() {
+            if (enemyImage == null)
+                return;
+            if (_vel.sqrMagnitude <= 0.001f)
                 return;
 
-            float speed = maxSpeed * (outside ? returnSpeedMultiplier : 1f);
-            float accel = acceleration * (outside ? returnAccelMultiplier : 1f);
+            if (!_cached)
+                CacheBaseRot();
 
-            Vector2 desiredVel = desiredDir * speed;
-            _vel = Vector2.MoveTowards(_vel, desiredVel, accel * dt);
-
-            pos += _vel * dt;
-
-            if (arena != null && !outside)
-                pos = arena.ClampInside(pos, padding);
-
-            self.position = pos;
+            float ang = Mathf.Atan2(_vel.y, _vel.x) * Mathf.Rad2Deg + angleOffsetDeg;
+            enemyImage.localRotation = _imageBaseLocalRot * Quaternion.Euler(0f, 0f, ang);
         }
     }
 }

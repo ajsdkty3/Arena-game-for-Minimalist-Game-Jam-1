@@ -14,15 +14,7 @@ namespace Gameplay.Player {
 
         [Header("Fire")]
         public Transform muzzle;
-        public float fireInterval = 0.25f; // 初始间隔（越小越快）
-
-        [Header("Fire Ramp (step based)")]
-        public bool rampFireRate = true;
-        public float intervalStepSeconds = 10f;   // 每多少秒提升一次射速
-        [Range(0.5f, 1f)]
-        public float fireMultiplier = 0.9f;       // 每次提升：间隔 *= 0.9（更快）
-        public float minFireInterval = 0.08f;     // 最快间隔下限
-        public bool useUnscaledTime = false;      // 如果你会 Time.timeScale=0（暂停/HitStop）可勾
+        public float fireInterval = 0.12f;
 
         [Header("Audio")]
         public AudioSource shootAudioSource;   // 拖一个AudioSource
@@ -33,37 +25,12 @@ namespace Gameplay.Player {
         Camera _cam;
         float _cd;
 
-        float _currentFireInterval;
-        float _nextRampTime;
-
-        float Now() => useUnscaledTime ? Time.unscaledTime : Time.time;
-
-        void Awake() {
-            _cam = Camera.main;
-
-            _currentFireInterval = fireInterval;
-            _nextRampTime = Now() + Mathf.Max(0.01f, intervalStepSeconds);
-        }
+        void Awake() => _cam = Camera.main;
 
         void OnEnable() { if (fire != null) fire.action.Enable(); }
         void OnDisable() { if (fire != null) fire.action.Disable(); }
 
         void Update() {
-            // step-based ramp
-            if (rampFireRate) {
-                float step = Mathf.Max(0.01f, intervalStepSeconds);
-                float now = Now();
-
-                // 防止卡顿/切回窗口导致一次跳过很多秒：用 while 追上进度
-                while (now >= _nextRampTime && _currentFireInterval > minFireInterval) {
-                    _currentFireInterval *= fireMultiplier;
-                    if (_currentFireInterval < minFireInterval)
-                        _currentFireInterval = minFireInterval;
-
-                    _nextRampTime += step;
-                }
-            }
-
             _cd -= Time.deltaTime;
 
             if (pool == null || _cam == null)
@@ -89,7 +56,7 @@ namespace Gameplay.Player {
 
             PlayShootSound();
 
-            _cd = _currentFireInterval;
+            _cd = fireInterval;
         }
 
         void PlayShootSound() {

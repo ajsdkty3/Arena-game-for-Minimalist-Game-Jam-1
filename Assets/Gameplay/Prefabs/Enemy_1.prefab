@@ -213,6 +213,14 @@ MonoBehaviour:
   randomDeathPitch: 1
   deathPitchMin: 0.35
   deathPitchMax: 0.35
+  deathFadeDuration: 0.5
+  collidersToDisable:
+  - {fileID: 1716231547985488430}
+  particlesToStop:
+  - {fileID: 6179602410798576891}
+  - {fileID: 5685210131068396971}
+  trailsToClear: []
+  enemyImageRenderer: {fileID: 9179344830617045653}
 --- !u!114 &8076192849594241677
 MonoBehaviour:
   m_ObjectHideFlags: 0

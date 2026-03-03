@@ -30,7 +30,6 @@ public class BgmPlayer : MonoBehaviour {
             return;
         }
         Instance = this;
-        DontDestroyOnLoad(gameObject);
 
         if (baseSource == null)
             baseSource = gameObject.AddComponent<AudioSource>();

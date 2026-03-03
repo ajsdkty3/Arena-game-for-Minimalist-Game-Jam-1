@@ -62,7 +62,7 @@ namespace Gameplay.Player {
         float _startLightIntensity;
         Color _startShadowColor;
 
-
+        public string reloadScene = "Menu";
         void Awake() {
             _hp = maxHp;
 
@@ -84,8 +84,6 @@ namespace Gameplay.Player {
             CameraShake2D.I?.Shake(0.1f, 0.2f);
 
             PlayHitSound();
-
-            Debug.Log("HP:" + _hp);
 
             if (_hp <= 0 && allowDeath)
                 Die();
@@ -172,7 +170,7 @@ namespace Gameplay.Player {
                 yield return null;
             }
 
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            SceneManager.LoadScene(reloadScene);
         }
 
         void UpdateDeathVisual(float k) {

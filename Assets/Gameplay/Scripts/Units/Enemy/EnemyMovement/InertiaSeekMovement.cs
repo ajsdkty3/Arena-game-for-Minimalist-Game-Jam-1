@@ -93,8 +93,6 @@ namespace Gameplay.Units.Movement {
             _vel = Vector2.MoveTowards(_vel, desired, acceleration * dt);
             self.position += (Vector3)(_vel * dt);
 
-            if (Time.frameCount % 30 == 0)
-                Debug.Log($"{name} ms={maxSpeed} acc={acceleration} dt={dt:F4} v={_vel.magnitude:F2}");
         }
     }
 }

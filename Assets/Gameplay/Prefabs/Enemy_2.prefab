@@ -287,7 +287,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.3
+      scalar: 0.5
       minScalar: 0.08
       maxCurve:
         serializedVersion: 2
@@ -4949,7 +4949,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12bef911fda7d0d4cb0427902c72dcbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Gameplay.Units.Enemy
-  maxHp: 6
+  maxHp: 15
   hitDisableCooldown: 0.05
   hitReact: {fileID: 883735973750297530}
   hitStopTime: 0.04

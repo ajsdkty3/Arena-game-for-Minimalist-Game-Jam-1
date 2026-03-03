@@ -1500,8 +1500,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: New Text
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 26c61833d7e9f4d4b8d693cc36c2303e, type: 2}
+  m_sharedMaterial: {fileID: -1417032503908190601, guid: 26c61833d7e9f4d4b8d693cc36c2303e, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2723,9 +2723,9 @@ MonoBehaviour:
     poolKey: Enemy_2
     startAfter: 10
     interval: 10
-    burst: 2
+    burst: 0
     burstGrowEvery: 10
-    burstGrowBy: 1
+    burstGrowBy: 0
     burstMax: 5
   - name: Enemy_3
     poolKey: Enemy_3
@@ -4446,6 +4446,7 @@ MonoBehaviour:
   targetColor2: {r: 0.2627451, g: 0, b: 0, a: 1}
   playerLight: {fileID: 1790670445}
   playerShadow: {fileID: 1858051110}
+  reloadScene: Menu
 --- !u!114 &793331821
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4483,7 +4484,7 @@ MonoBehaviour:
   lightRadiusAddAtApex: 0
   lightResponse: 1
   jumpAudio: {fileID: 793331824}
-  jumpClip: {fileID: 8300000, guid: 4115fd196702e834bbc3f6d63fcfd8ca, type: 3}
+  jumpClip: {fileID: 8300000, guid: dc57b1d488cb0104283426f7b41689ef, type: 3}
   jumpVolume: 1
   playerCollider: {fileID: 0}
   jumpDuration: 1
@@ -7560,9 +7561,9 @@ MonoBehaviour:
     startAfter: 1
     interval: 7
     burst: 1
-    burstGrowEvery: 30
+    burstGrowEvery: 14
     burstGrowBy: 0
-    burstMax: 5
+    burstMax: 2
   maxAliveTotal: 60
   minOffset: 1
   maxOffset: 3
@@ -8059,7 +8060,7 @@ MonoBehaviour:
     warmup: 15
   - key: Enemy_2
     prefab: {fileID: 3166030119217381912, guid: d8ce8ef3ee8acb443a164a7658de0f12, type: 3}
-    warmup: 8
+    warmup: 3
   - key: Enemy_3
     prefab: {fileID: 3166030119217381912, guid: c8911c7f462531a45aaa5b9f9a22ee3c, type: 3}
     warmup: 6
@@ -10149,7 +10150,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2134200509}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2953298c056f756488b0127781c692a3, type: 3}
   m_Name: 
@@ -10173,11 +10174,6 @@ MonoBehaviour:
   bulletKey: Bullet
   muzzle: {fileID: 0}
   fireInterval: 0.1
-  rampFireRate: 1
-  intervalStepSeconds: 10
-  fireMultiplier: 0.9
-  minFireInterval: 0.08
-  useUnscaledTime: 0
   shootAudioSource: {fileID: 55842172}
   shootClip: {fileID: 8300000, guid: b6e7853c119b44747bd761e7a32a7d36, type: 3}
   pitchMin: 0.8

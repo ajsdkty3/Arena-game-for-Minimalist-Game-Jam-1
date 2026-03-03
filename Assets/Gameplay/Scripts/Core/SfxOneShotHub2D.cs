@@ -12,7 +12,6 @@ public class SfxOneShotHub2D : MonoBehaviour {
     void Awake() {
         if (I != null && I != this) { Destroy(gameObject); return; }
         I = this;
-        DontDestroyOnLoad(gameObject);
 
         if (source == null)
             source = GetComponent<AudioSource>();

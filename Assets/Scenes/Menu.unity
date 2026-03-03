@@ -457,6 +457,9 @@ MonoBehaviour:
   - sceneName: main
     clip: {fileID: 0}
     stopIfClipIsNull: 1
+  - sceneName: Intro 1
+    clip: {fileID: 8300000, guid: c46512efbecbd7344b94586f10456ab9, type: 3}
+    stopIfClipIsNull: 1
   stopIfNoClip: 1
   fadeDuration: 1
   volume: 0.2

@@ -133,7 +133,7 @@ namespace Gameplay.Player {
         }
 
         IEnumerator DeathRoutine() {
-            FindObjectOfType<BestTimeManager>().StopAndCheckRecord();
+            BestTimeManager.Instance.EndRunAndCheckRecord();
             CameraShake2D.I?.Shake(0.2f, 0.35f);
 
             Time.timeScale = 0f;
